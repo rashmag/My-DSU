@@ -5,6 +5,7 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBack"
     tools:context=".EditSchdule.LoginEditSchduleActivity">
 
     <ImageView
@@ -31,7 +32,7 @@
         android:fontFamily="@font/gothaprobla"
         android:maxLines="1"
         android:text="@string/authTitle"
-        android:textColor="@color/colorBlackTitleAuth"
+        android:textColor="@color/whiteAndBlack"
         android:textSize="44sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -107,8 +108,9 @@
         android:fontFamily="@font/gothapro1ig"
         android:hint="@string/textPasswordHint"
         android:inputType="textPassword"
+        android:textColorHint="@color/passwordHint"
         android:textAlignment="center"
-        android:textColor="@color/colorBlack"
+        android:textColor="@color/colorBlackTextPassword"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

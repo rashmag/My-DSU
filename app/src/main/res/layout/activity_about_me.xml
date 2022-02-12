@@ -9,23 +9,22 @@
     tools:context="com.application.mydsu.AboutMe">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit"
+        android:id="@+id/editBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintTop_toTopOf="@+id/lightAndDarkTheme"
+        app:layout_constraintBottom_toBottomOf="@+id/lightAndDarkTheme"
+        android:background="@drawable/ic_enter_for_priority_people"
         android:textAllCaps="false"
         android:textSize="16sp"
-        android:id="@+id/editBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"/>
+        app:layout_constraintEnd_toEndOf="parent" />
     <ImageView
         android:id="@+id/userPhoto"
         android:layout_width="135dp"
         android:layout_height="135dp"
         android:layout_marginTop="70dp"
         android:background="@drawable/user_photo_blue_about_me"
-        android:onClick="EditBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"

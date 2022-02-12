@@ -18,6 +18,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -29,7 +30,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -41,7 +41,6 @@ import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
 import com.application.mydsu.EditSchdule.EditSchduleActivity;
 import com.application.mydsu.HomeWork.HomeWork;
 import com.application.mydsu.Utils.Swipe;
-import com.application.mydsu.putSchedule.SettingSchedule;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -60,6 +59,7 @@ public class Schedule extends AppCompatActivity {
     private Button buttonDefault, btnWeekDay1, btnWeekDay2, btnWeekDay3, btnWeekDay4, btnWeekDay5, btnWeekDay6,
             btnWeekDay8, btnWeekDay9, btnWeekDay10, btnWeekDay11, btnWeekDay12, btnWeekDay13,
             buttonWeekOne, buttonWeekTwo;
+    private ImageView btnMakeChanges;
     private SharedPreferences sharedPreferences;
     private ScrollView scrollView;
     private Calendar calendar, maxDayOfMonth;
@@ -254,9 +254,10 @@ public class Schedule extends AppCompatActivity {
             editTextLessonDB135, editTextAuditoresDB135, editTextTeacherDB135,
             editTextLessonDB136, editTextAuditoresDB136, editTextTeacherDB136;
     DBHelper dbHelper;
+    private View v;
     SQLiteDatabase db;
     private List<String> scheduleKey,scheduleValue;
-    Dialog dialog, dialog_default;
+    Dialog dialog, dialog_default,dialogDownloadDataInFirebase;
     private int weeekOfMonth, toDay, max, weekOfYearMax, weekOfYear;
     boolean onClicKweek = false, onClicDaySunday = false;
     ImageView pencilImageWhiteAndDark;
@@ -360,7 +361,7 @@ public class Schedule extends AppCompatActivity {
         buttonWeekOne = findViewById(R.id.buttonWeekOne);
         buttonWeekTwo = findViewById(R.id.buttonWeekTwo);
 
-        btnHomewWork = findViewById(R.id.btnHomewWok);
+        btnHomewWork = findViewById(R.id.btnHomeWork);
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             btnHomewWork.setImageDrawable(getResources().getDrawable(R.drawable.ic_home_work));
         }
@@ -387,7 +388,23 @@ public class Schedule extends AppCompatActivity {
 //        hasConnection(EditSchduleActivity.this);
 //        checkingInternet();
         //Получение расписания из firebase
-        getData();
+        //Dialog Download
+        v = LayoutInflater.from(Schedule.this).
+                inflate(R.layout.dialog_download, null);
+        dialogDownloadDataInFirebase = new Dialog(Schedule.this);
+        dialogDownloadDataInFirebase.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialogDownloadDataInFirebase.setContentView(v);
+        dialogDownloadDataInFirebase.setCancelable(false);
+        dialogDownloadDataInFirebase.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        btnMakeChanges = findViewById(R.id.btnMakeChanges);
+        btnMakeChanges.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogDownloadDataInFirebase.show();
+                getData();
+            }
+        });
         //УСТАНОВКА TEXTVIEW В HASHMAP
         new AsyncSetInHashMap().execute();
     }
@@ -584,7 +601,7 @@ public class Schedule extends AppCompatActivity {
         String lastDirection = changedDirection.getString("changedDirection", "ИСиТ");
         String lastCource = changedDirection.getString("changedCource", "2");
         if (!lastDirection.equals(elementSpinnerDirection) || !lastCource.equals(setElementSpinnerCource)) {
-            setTextSchedule();
+            getData();
             if (!onClicKweek && onClicDaySunday) {
                 sundayFormWeek1();
             } else if (onClicKweek && onClicDaySunday) {
@@ -1677,7 +1694,7 @@ public class Schedule extends AppCompatActivity {
             }
             long rowID13 = db.insert("mydgu", null, contentValues);
             Log.d(LOG_TAG, "row inserted, ID = " + rowID13);
-            setTextSchedule();
+            getData();
             choosedDay();
             prefs.edit().putBoolean("firstrun", false).apply();
         }
@@ -3801,7 +3818,6 @@ public class Schedule extends AppCompatActivity {
             scrollView.setVisibility(View.INVISIBLE);
             form_lessons_sunday.setVisibility(View.VISIBLE);
             form_lessons_sunday_text.setVisibility(View.VISIBLE);
-
         } else {
             btnWeekDay6.setBackgroundResource(R.drawable.form_schedule_btn_pink);
             linearLayout6.setVisibility(View.VISIBLE);
@@ -3829,96 +3845,6 @@ public class Schedule extends AppCompatActivity {
 
     }
 
-    //УСТОНАВЛИВАЕМ ТЕКСТ
-    public void setTextSchedule() {
-        SettingSchedule e = new SettingSchedule(Schedule.this, editTextLesson11, editTextLesson12, editTextLesson13, editTextLesson14, editTextLesson15, editTextLesson16,
-                editTextAuditores11, editTextAuditores12, editTextAuditores13, editTextAuditores14, editTextAuditores15,
-                editTextAuditores16,
-                editTextTeacher11, editTextTeacher12, editTextTeacher13, editTextTeacher14, editTextTeacher15, editTextTeacher16,
-                editTextLesson21, editTextLesson22, editTextLesson23, editTextLesson24, editTextLesson25, editTextLesson26, editTextAuditores21,
-                editTextAuditores22, editTextAuditores23, editTextAuditores24, editTextAuditores25, editTextAuditores26,
-                editTextTeacher21, editTextTeacher22, editTextTeacher23, editTextTeacher24, editTextTeacher25, editTextTeacher26, editTextLesson31,
-                editTextLesson32, editTextLesson33, editTextLesson34, editTextLesson35, editTextLesson36,
-                editTextAuditores31, editTextAuditores32, editTextAuditores33, editTextAuditores34, editTextAuditores35, editTextAuditores36,
-                editTextTeacher31, editTextTeacher32,
-                editTextTeacher33, editTextTeacher34, editTextTeacher35, editTextTeacher36,
-                editTextLesson41, editTextLesson42, editTextLesson43, editTextLesson44, editTextLesson45, editTextLesson46,
-                editTextAuditores41, editTextAuditores42, editTextAuditores43,
-                editTextAuditores44, editTextAuditores45, editTextAuditores46,
-                editTextTeacher41, editTextTeacher42, editTextTeacher43, editTextTeacher44, editTextTeacher45, editTextTeacher46,
-                editTextLesson51, editTextLesson52, editTextLesson53, editTextLesson54,
-                editTextLesson55, editTextLesson56,
-                editTextAuditores51, editTextAuditores52, editTextAuditores53, editTextAuditores54, editTextAuditores55, editTextAuditores56,
-                editTextTeacher51, editTextTeacher52, editTextTeacher53, editTextTeacher54, editTextTeacher55, editTextTeacher56,
-                editTextLesson61, editTextLesson62,
-                editTextLesson63, editTextLesson64, editTextLesson65, editTextLesson66,
-                editTextAuditores61, editTextAuditores62, editTextAuditores63, editTextAuditores64, editTextAuditores65, editTextAuditores66,
-                editTextTeacher61, editTextTeacher62, editTextTeacher63,
-                editTextTeacher64, editTextTeacher65, editTextTeacher66,
-                editTextLesson81, editTextLesson82, editTextLesson83, editTextLesson84, editTextLesson85, editTextLesson86,
-                editTextAuditores81, editTextAuditores82, editTextAuditores83, editTextAuditores84, editTextAuditores85, editTextAuditores86,
-                editTextTeacher81, editTextTeacher82, editTextTeacher83, editTextTeacher84, editTextTeacher85, editTextTeacher86,
-                editTextLesson91, editTextLesson92, editTextLesson93, editTextLesson94, editTextLesson95, editTextLesson96, editTextAuditores91,
-                editTextAuditores92, editTextAuditores93, editTextAuditores94, editTextAuditores95, editTextAuditores96,
-                editTextTeacher91, editTextTeacher92, editTextTeacher93, editTextTeacher94, editTextTeacher95, editTextTeacher96,
-                editTextLesson101, editTextLesson102,
-                editTextLesson103, editTextLesson104, editTextLesson105, editTextLesson106,
-                editTextAuditores101, editTextAuditores102, editTextAuditores103, editTextAuditores104, editTextAuditores105, editTextAuditores106,
-                editTextTeacher101, editTextTeacher102, editTextTeacher103,
-                editTextTeacher104, editTextTeacher105, editTextTeacher106,
-                editTextLesson111, editTextLesson112, editTextLesson113, editTextLesson114, editTextLesson115, editTextLesson116,
-                editTextAuditores111, editTextAuditores112, editTextAuditores113, editTextAuditores114,
-                editTextAuditores115, editTextAuditores116,
-                editTextTeacher111, editTextTeacher112, editTextTeacher113, editTextTeacher114, editTextTeacher115, editTextTeacher116,
-                editTextLesson121, editTextLesson122, editTextLesson123, editTextLesson124, editTextLesson125, editTextLesson126,
-                editTextAuditores121, editTextAuditores122, editTextAuditores123, editTextAuditores124, editTextAuditores125, editTextAuditores126,
-                editTextTeacher121, editTextTeacher122, editTextTeacher123, editTextTeacher124, editTextTeacher125, editTextTeacher126,
-                editTextLesson131, editTextLesson132,
-                editTextLesson133, editTextLesson134, editTextLesson135, editTextLesson136,
-                editTextAuditores131, editTextAuditores132, editTextAuditores133, editTextAuditores134, editTextAuditores135, editTextAuditores136,
-                editTextTeacher131, editTextTeacher132,
-                editTextTeacher133, editTextTeacher134, editTextTeacher135, editTextTeacher136);
-        //1 КУРС ФИИИТ
-        if (elementSpinnerDirection.equals("ИСиТ") && setElementSpinnerCource.equals("1")) {
-            e.courseOneISiT();
-        } else if (elementSpinnerDirection.equals("ИБ") && setElementSpinnerCource.equals("1")) {
-            e.courseOneIB();
-        } else if (elementSpinnerDirection.equals("ИСиП") && setElementSpinnerCource.equals("1")) {
-            e.courseOneISiP();
-        } else if (elementSpinnerDirection.equals("ПИЭ") && setElementSpinnerCource.equals("1")) {
-            e.courseOnePIE();
-        }
-        // 2 КУРС ФИИИТ
-        else if (elementSpinnerDirection.equals("ИСиТ") && setElementSpinnerCource.equals("2")) {
-            e.courseTwoISiT();
-        } else if (elementSpinnerDirection.equals("ИБ") && setElementSpinnerCource.equals("2")) {
-            e.courseTwoIB();
-        } else if (elementSpinnerDirection.equals("ПИЭ") && setElementSpinnerCource.equals("2")) {
-            e.courseTwoPIE();
-        } else if (elementSpinnerDirection.equals("ПИМ") && setElementSpinnerCource.equals("2")) {
-            e.courseTwoPIM();
-        }
-        //3 КУРС ФИИИТ
-        else if (elementSpinnerDirection.equals("ИСиТ") && setElementSpinnerCource.equals("3")) {
-            e.courseThreeISiT();
-        } else if (elementSpinnerDirection.equals("ИБ") && setElementSpinnerCource.equals("3")) {
-            e.courseThreeIB();
-        } else if (elementSpinnerDirection.equals("ПИЭ") && setElementSpinnerCource.equals("3")) {
-            e.courseThreePIE();
-        } else if (elementSpinnerDirection.equals("ПИМ") && setElementSpinnerCource.equals("3")) {
-            e.courseThreePIM();
-        }
-        //4 КУРС ФИИИТ
-        else if (elementSpinnerDirection.equals("ИСиТ") && setElementSpinnerCource.equals("4")) {
-            e.courseFourISiT();
-        } else if (elementSpinnerDirection.equals("ИБ") && setElementSpinnerCource.equals("4")) {
-            e.courseFourIB();
-        } else if (elementSpinnerDirection.equals("ПИЭ") && setElementSpinnerCource.equals("4")) {
-            e.courseFourPIE();
-        } else if (elementSpinnerDirection.equals("ПИМ") && setElementSpinnerCource.equals("4")) {
-            e.courseFourPIM();
-        }
-    }
 
     public void dialogDefault(View view) {
         dialog_default = new Dialog(this);
@@ -3937,7 +3863,7 @@ public class Schedule extends AppCompatActivity {
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setTextSchedule();
+                getData();
                 if (onClicKweek == false && onClicDaySunday == true) {
                     sundayFormWeek1();
                 } else if (onClicKweek == true && onClicDaySunday == true) {
@@ -4833,7 +4759,9 @@ public class Schedule extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                if(dialogDownloadDataInFirebase.isShowing()) {
+                    dialogDownloadDataInFirebase.dismiss();
+                }
             }
         });
     }
@@ -4841,8 +4769,8 @@ public class Schedule extends AppCompatActivity {
         for (int i=0; i<scheduleKey.size();i++){
             hashMap.get(scheduleKey.get(i)).setText(scheduleValue.get(i));
         }
-        if(dialog.isShowing()) {
-            dialog.dismiss();
+        if(dialogDownloadDataInFirebase.isShowing()) {
+            dialogDownloadDataInFirebase.dismiss();
         }
     }
 

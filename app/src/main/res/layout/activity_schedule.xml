@@ -8,9 +8,17 @@
     android:layout_height="match_parent"
     android:background="@color/colorBack"
     tools:context="com.application.mydsu.Schedule">
-
     <ImageView
-        android:id="@id/btnHomewWok"
+        android:id="@+id/btnMakeChanges"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/bell"
+        android:layout_marginEnd="20dp"
+        android:onClick="InHomeWork"
+        app:layout_constraintEnd_toStartOf="@id/btnHomeWork"
+        app:layout_constraintTop_toTopOf="@id/btnHomeWork"/>
+    <ImageView
+        android:id="@id/btnHomeWork"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:src="@drawable/ic_home_work_icon_btn"

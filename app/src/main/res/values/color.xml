@@ -8,6 +8,10 @@
     <color name="colorGrayBtnNews">#F5F5F5</color>
     <!--MainActivity End-->
 
+    <color name="colorBlackTextPassword">#000000</color>
+    <color name="form_password_color">#32000000</color>
+    <color name="passwordHint">#40000000</color>
+    <color name="textDirectionAuth">#48000000</color>
     <!--Schedule Start-->
     <color name="colorSubGroupSchedule">#56000000</color>
     <color name="colorScheduleFormLessonsWeek">#F5F5F5</color>

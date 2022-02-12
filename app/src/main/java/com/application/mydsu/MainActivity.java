@@ -6,19 +6,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -28,13 +21,6 @@ import com.application.mydsu.Tutorial.ActivityStart;
 import com.application.mydsu.Utils.CircularTransformation;
 import com.application.mydsu.Utils.Swipe;
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -134,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnHomewWork = findViewById(R.id.btnHomewWok);
+        btnHomewWork = findViewById(R.id.btnHomeWork);
         if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
             btnHomewWork.setImageDrawable(getResources().getDrawable(R.drawable.ic_home_work));
         }

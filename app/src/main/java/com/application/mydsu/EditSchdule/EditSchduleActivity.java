@@ -240,14 +240,15 @@ public class EditSchduleActivity extends AppCompatActivity {
             editTextLessonDB135, editTextAuditoresDB135, editTextTeacherDB135,
             editTextLessonDB136, editTextAuditoresDB136, editTextTeacherDB136;
     private FirebaseUser user;
-    private TextView outUserTV,tochka, tochka2;
+    private Button outUserTV;
+    private TextView tochka, tochka2;
     private SharedPreferences prefsTheme = null;
     boolean onClicKweek = false, onClicDaySunday = false;
     private ConstraintLayout main_layout;
-    private TextView nameSchedule, surNameSchedule,form_lessons_sunday,
+    private TextView form_lessons_sunday,
             form_lessons_sunday_text, course, sobgroup;
     boolean flagTheme;
-    private String setUserName, setUserSurName, setElementCource,
+    private String  setElementCource,
             elementSubgroupCource, elementDirection,elementFacultet;
     private SharedPreferences sharedPreferences,prefs;
     private ScrollView scrollView;
@@ -2135,20 +2136,14 @@ public class EditSchduleActivity extends AppCompatActivity {
     private void setData() {
         sharedPreferences = getSharedPreferences("userdata", Context.MODE_PRIVATE);
 
-        setUserName = sharedPreferences.getString("setUserName", "");
-        setUserSurName = sharedPreferences.getString("setUserSurName", "");
         setElementCource = sharedPreferences.getString("setElementSpinnerCource", "");
         elementSubgroupCource = sharedPreferences.getString("elementSpinnerSubgroupCource", "");
         elementDirection = sharedPreferences.getString("elementSpinnerDirection", "");
         elementFacultet = sharedPreferences.getString("setElementSpinnerFacultet", "");
 
-        nameSchedule = findViewById(R.id.nameSchedule);
-        surNameSchedule = findViewById(R.id.surNameSchedule);
         course = findViewById(R.id.course);
         sobgroup = findViewById(R.id.sobgroup);
 
-        nameSchedule.setText(setUserName);
-        surNameSchedule.setText(setUserSurName);
         course.setText(setElementCource + " курс, ");
         sobgroup.setText(elementSubgroupCource + " подгруппа");
     }

@@ -59,6 +59,10 @@
     <color name="close_dafeult_gtn">#40FFFFFF</color>
     <color name="colorBtnTextLightAndTheme">#FFFFFF</color>
 
+    <color name="form_password_color">#32FFFFFF</color>
+    <color name="passwordHint">#40FFFFFF</color>
+    <color name="textDirectionAuth">#48FFFFFF</color>
+
     <color name="colorWhiteOpacity">#24FFFFFF</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorBtnSchedule">#14FFFFFF</color>
@@ -75,6 +79,7 @@
     <color name="gray">#655F5F</color>
     <color name="colorHomeWorkLine">#534F4F</color>
 
+    <color name="colorBlackTextPassword">#FFFFFF</color>
     //Расписание
     <color name="colorButtonScheduleBlue">#51b4fb</color>
     <color name="colorButtonSchedulePink">#A189FF</color>

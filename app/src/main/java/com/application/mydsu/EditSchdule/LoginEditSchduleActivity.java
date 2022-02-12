@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ import java.util.List;
 
 public class LoginEditSchduleActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
+    private ImageView imgBack;
     private String dirText,textSpinDirection;
     private ConstraintLayout main_layout;
     private Integer elementSpinnerCourceInt, elementSpinnerDirectionInt;
@@ -69,7 +71,23 @@ public class LoginEditSchduleActivity extends AppCompatActivity {
                 LoginEditSchedule();
             }
         });
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        LoginEditSchduleActivity.this,AboutMe.class);
+                startActivity(intent);
+            }
+        });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(
+                LoginEditSchduleActivity.this,AboutMe.class);
+        startActivity(intent);
     }
 
     private void getDataInSharedPrefForSpinner() {
@@ -156,6 +174,7 @@ public class LoginEditSchduleActivity extends AppCompatActivity {
 
 
     private void init() {
+        imgBack = findViewById(R.id.imgBack);
         spinnerCource = findViewById(R.id.spinnerCource);
         spinnerDirection = findViewById(R.id.spinnerDirection);
         btnEnter = findViewById(R.id.btnEnter);
@@ -166,7 +185,7 @@ public class LoginEditSchduleActivity extends AppCompatActivity {
         String password = passwordET.getText().toString();
         if (TextUtils.isEmpty(elementSpinnerDirection)) {
             Toast.makeText(LoginEditSchduleActivity.this,
-                    "Выберите напрпаление и курс", Toast.LENGTH_SHORT).show();
+                    "Выберите направление и курс", Toast.LENGTH_SHORT).show();
             ;
         } else if (TextUtils.isEmpty(password)) {
             passwordET.setError("Запоните поле");
@@ -174,8 +193,6 @@ public class LoginEditSchduleActivity extends AppCompatActivity {
             textSpinDirection = spinnerDirection.getSelectedItem().toString();
             textDirectionInEnglish();
             String email = dirText + elementSpinnerCource + "@mail.ru";
-            Toast.makeText(LoginEditSchduleActivity.this,
-                    "1 = " + email, Toast.LENGTH_SHORT).show();
             signIn(email, password);
         }
     }
