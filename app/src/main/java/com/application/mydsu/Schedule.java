@@ -31,20 +31,31 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
 
+import com.application.mydsu.EditSchdule.EditSchduleActivity;
 import com.application.mydsu.HomeWork.HomeWork;
 import com.application.mydsu.Utils.Swipe;
 import com.application.mydsu.putSchedule.SettingSchedule;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
 
 public class Schedule extends AppCompatActivity {
     private SharedPreferences prefs = null;
+    private HashMap<String,TextView> hashMap;
     private final String LOG_TAG = "myLogs";
     private Button buttonDefault, btnWeekDay1, btnWeekDay2, btnWeekDay3, btnWeekDay4, btnWeekDay5, btnWeekDay6,
             btnWeekDay8, btnWeekDay9, btnWeekDay10, btnWeekDay11, btnWeekDay12, btnWeekDay13,
@@ -68,7 +79,7 @@ public class Schedule extends AppCompatActivity {
             dayOfMonthMinus11, dayOfMonthMinus12, dayOfMonthMinus13, dayOfMonthPlus1, dayOfMonthPlus2, dayOfMonthPlus3, dayOfMonthPlus4, dayOfMonthPlus5,
             dayOfMonthPlus6, dayOfMonthPlus7, dayOfMonthPlus8, dayOfMonthPlus9, dayOfMonthPlus10,
             dayOfMonthPlus11, dayOfMonthPlus12, dayOfMonthPlus13;
-    private String setUserName, setUserSurName, setElementSpinnerCource,
+    private String setUserName, setUserSurName, setElementSpinnerCource,elementFacultet,
             elementSpinnerSubgroupCource, elementSpinnerDirection;
 
     //1 ДЕНЬ
@@ -244,6 +255,7 @@ public class Schedule extends AppCompatActivity {
             editTextLessonDB136, editTextAuditoresDB136, editTextTeacherDB136;
     DBHelper dbHelper;
     SQLiteDatabase db;
+    private List<String> scheduleKey,scheduleValue;
     Dialog dialog, dialog_default;
     private int weeekOfMonth, toDay, max, weekOfYearMax, weekOfYear;
     boolean onClicKweek = false, onClicDaySunday = false;
@@ -371,6 +383,13 @@ public class Schedule extends AppCompatActivity {
         setTochka();
         //ПЕРВЫЙ ЗАПУСК
         firstrun();
+        //Проверяем выход в интернет
+//        hasConnection(EditSchduleActivity.this);
+//        checkingInternet();
+        //Получение расписания из firebase
+        getData();
+        //УСТАНОВКА TEXTVIEW В HASHMAP
+        new AsyncSetInHashMap().execute();
     }
 
     public void InHomeWork(View view) {
@@ -1682,6 +1701,7 @@ public class Schedule extends AppCompatActivity {
         setElementSpinnerCource = sharedPreferences.getString("setElementSpinnerCource", "");
         elementSpinnerSubgroupCource = sharedPreferences.getString("elementSpinnerSubgroupCource", "");
         elementSpinnerDirection = sharedPreferences.getString("elementSpinnerDirection", "");
+        elementFacultet = sharedPreferences.getString("setElementSpinnerFacultet", "");
 
         nameSchedule = findViewById(R.id.nameSchedule);
         surNameSchedule = findViewById(R.id.surNameSchedule);
@@ -4522,6 +4542,308 @@ public class Schedule extends AppCompatActivity {
         editTextTeacher134.setEnabled(true);
         editTextTeacher135.setEnabled(true);
         editTextTeacher136.setEnabled(true);
+    }
+    private class AsyncSetInHashMap extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            setInHashMap();
+            return null;
+        }
+
+    }
+
+    private void setInHashMap() {
+
+        hashMap = new HashMap<>();
+        //1
+        hashMap.put("lesson11",editTextLesson11);
+        hashMap.put("lesson12",editTextLesson12);
+        hashMap.put("lesson13",editTextLesson13);
+        hashMap.put("lesson14",editTextLesson14);
+        hashMap.put("lesson15",editTextLesson15);
+        hashMap.put("lesson16",editTextLesson16);
+
+        hashMap.put("auditores11",editTextAuditores11);
+        hashMap.put("auditores12",editTextAuditores12);
+        hashMap.put("auditores13",editTextAuditores13);
+        hashMap.put("auditores14",editTextAuditores14);
+        hashMap.put("auditores15",editTextAuditores15);
+        hashMap.put("auditores16",editTextAuditores16);
+
+        hashMap.put("teacher11",editTextTeacher11);
+        hashMap.put("teacher12",editTextTeacher12);
+        hashMap.put("teacher13",editTextTeacher13);
+        hashMap.put("teacher14",editTextTeacher14);
+        hashMap.put("teacher15",editTextTeacher15);
+        hashMap.put("teacher16",editTextTeacher16);
+        //2
+        hashMap.put("lesson21",editTextLesson21);
+        hashMap.put("lesson22",editTextLesson22);
+        hashMap.put("lesson23",editTextLesson23);
+        hashMap.put("lesson24",editTextLesson24);
+        hashMap.put("lesson25",editTextLesson25);
+        hashMap.put("lesson26",editTextLesson26);
+
+        hashMap.put("auditores21",editTextAuditores21);
+        hashMap.put("auditores22",editTextAuditores22);
+        hashMap.put("auditores23",editTextAuditores23);
+        hashMap.put("auditores24",editTextAuditores24);
+        hashMap.put("auditores25",editTextAuditores25);
+        hashMap.put("auditores26",editTextAuditores26);
+
+        hashMap.put("teacher21",editTextTeacher21);
+        hashMap.put("teacher22",editTextTeacher22);
+        hashMap.put("teacher23",editTextTeacher23);
+        hashMap.put("teacher24",editTextTeacher24);
+        hashMap.put("teacher25",editTextTeacher25);
+        hashMap.put("teacher26",editTextTeacher26);
+        //3
+        hashMap.put("lesson31",editTextLesson31);
+        hashMap.put("lesson32",editTextLesson32);
+        hashMap.put("lesson33",editTextLesson33);
+        hashMap.put("lesson34",editTextLesson34);
+        hashMap.put("lesson35",editTextLesson35);
+        hashMap.put("lesson36",editTextLesson36);
+
+        hashMap.put("auditores31",editTextAuditores31);
+        hashMap.put("auditores32",editTextAuditores32);
+        hashMap.put("auditores33",editTextAuditores33);
+        hashMap.put("auditores34",editTextAuditores34);
+        hashMap.put("auditores35",editTextAuditores35);
+        hashMap.put("auditores36",editTextAuditores36);
+
+        hashMap.put("teacher31",editTextTeacher31);
+        hashMap.put("teacher32",editTextTeacher32);
+        hashMap.put("teacher33",editTextTeacher33);
+        hashMap.put("teacher34",editTextTeacher34);
+        hashMap.put("teacher35",editTextTeacher35);
+        hashMap.put("teacher36",editTextTeacher36);
+        //4
+        hashMap.put("lesson41",editTextLesson41);
+        hashMap.put("lesson42",editTextLesson42);
+        hashMap.put("lesson43",editTextLesson43);
+        hashMap.put("lesson44",editTextLesson44);
+        hashMap.put("lesson45",editTextLesson45);
+        hashMap.put("lesson46",editTextLesson46);
+
+        hashMap.put("auditores41",editTextAuditores41);
+        hashMap.put("auditores42",editTextAuditores42);
+        hashMap.put("auditores43",editTextAuditores43);
+        hashMap.put("auditores44",editTextAuditores44);
+        hashMap.put("auditores45",editTextAuditores45);
+        hashMap.put("auditores46",editTextAuditores46);
+
+        hashMap.put("teacher41",editTextTeacher41);
+        hashMap.put("teacher42",editTextTeacher42);
+        hashMap.put("teacher43",editTextTeacher43);
+        hashMap.put("teacher44",editTextTeacher44);
+        hashMap.put("teacher45",editTextTeacher45);
+        hashMap.put("teacher46",editTextTeacher46);
+        //5
+        hashMap.put("lesson51",editTextLesson51);
+        hashMap.put("lesson52",editTextLesson52);
+        hashMap.put("lesson53",editTextLesson53);
+        hashMap.put("lesson54",editTextLesson54);
+        hashMap.put("lesson55",editTextLesson55);
+        hashMap.put("lesson56",editTextLesson56);
+
+        hashMap.put("auditores51",editTextAuditores51);
+        hashMap.put("auditores52",editTextAuditores52);
+        hashMap.put("auditores53",editTextAuditores53);
+        hashMap.put("auditores54",editTextAuditores54);
+        hashMap.put("auditores55",editTextAuditores55);
+        hashMap.put("auditores56",editTextAuditores56);
+
+        hashMap.put("teacher51",editTextTeacher51);
+        hashMap.put("teacher52",editTextTeacher52);
+        hashMap.put("teacher53",editTextTeacher53);
+        hashMap.put("teacher54",editTextTeacher54);
+        hashMap.put("teacher55",editTextTeacher55);
+        hashMap.put("teacher56",editTextTeacher56);
+        //6
+        hashMap.put("lesson61",editTextLesson61);
+        hashMap.put("lesson62",editTextLesson62);
+        hashMap.put("lesson63",editTextLesson63);
+        hashMap.put("lesson64",editTextLesson64);
+        hashMap.put("lesson65",editTextLesson65);
+        hashMap.put("lesson66",editTextLesson66);
+
+        hashMap.put("auditores61",editTextAuditores61);
+        hashMap.put("auditores62",editTextAuditores62);
+        hashMap.put("auditores63",editTextAuditores63);
+        hashMap.put("auditores64",editTextAuditores64);
+        hashMap.put("auditores65",editTextAuditores65);
+        hashMap.put("auditores66",editTextAuditores66);
+
+        hashMap.put("teacher61",editTextTeacher61);
+        hashMap.put("teacher62",editTextTeacher62);
+        hashMap.put("teacher63",editTextTeacher63);
+        hashMap.put("teacher64",editTextTeacher64);
+        hashMap.put("teacher65",editTextTeacher65);
+        hashMap.put("teacher66",editTextTeacher66);
+        //8
+        hashMap.put("lesson81",editTextLesson81);
+        hashMap.put("lesson82",editTextLesson82);
+        hashMap.put("lesson83",editTextLesson83);
+        hashMap.put("lesson84",editTextLesson84);
+        hashMap.put("lesson85",editTextLesson85);
+        hashMap.put("lesson86",editTextLesson86);
+
+        hashMap.put("auditores81",editTextAuditores81);
+        hashMap.put("auditores82",editTextAuditores82);
+        hashMap.put("auditores83",editTextAuditores83);
+        hashMap.put("auditores84",editTextAuditores84);
+        hashMap.put("auditores85",editTextAuditores85);
+        hashMap.put("auditores86",editTextAuditores86);
+
+        hashMap.put("teacher81",editTextTeacher81);
+        hashMap.put("teacher82",editTextTeacher82);
+        hashMap.put("teacher83",editTextTeacher83);
+        hashMap.put("teacher84",editTextTeacher84);
+        hashMap.put("teacher85",editTextTeacher85);
+        hashMap.put("teacher86",editTextTeacher86);
+        //9
+        hashMap.put("lesson91",editTextLesson91);
+        hashMap.put("lesson92",editTextLesson92);
+        hashMap.put("lesson93",editTextLesson93);
+        hashMap.put("lesson94",editTextLesson94);
+        hashMap.put("lesson95",editTextLesson95);
+        hashMap.put("lesson96",editTextLesson96);
+
+        hashMap.put("auditores91",editTextAuditores91);
+        hashMap.put("auditores92",editTextAuditores92);
+        hashMap.put("auditores93",editTextAuditores93);
+        hashMap.put("auditores94",editTextAuditores94);
+        hashMap.put("auditores95",editTextAuditores95);
+        hashMap.put("auditores96",editTextAuditores96);
+
+        hashMap.put("teacher91",editTextTeacher91);
+        hashMap.put("teacher92",editTextTeacher92);
+        hashMap.put("teacher93",editTextTeacher93);
+        hashMap.put("teacher94",editTextTeacher94);
+        hashMap.put("teacher95",editTextTeacher95);
+        hashMap.put("teacher96",editTextTeacher96);
+        //10
+        hashMap.put("lesson101",editTextLesson101);
+        hashMap.put("lesson102",editTextLesson102);
+        hashMap.put("lesson103",editTextLesson103);
+        hashMap.put("lesson104",editTextLesson104);
+        hashMap.put("lesson105",editTextLesson105);
+        hashMap.put("lesson106",editTextLesson106);
+
+        hashMap.put("auditores101",editTextAuditores101);
+        hashMap.put("auditores102",editTextAuditores102);
+        hashMap.put("auditores103",editTextAuditores103);
+        hashMap.put("auditores104",editTextAuditores104);
+        hashMap.put("auditores105",editTextAuditores105);
+        hashMap.put("auditores106",editTextAuditores106);
+
+        hashMap.put("teacher101",editTextTeacher101);
+        hashMap.put("teacher102",editTextTeacher102);
+        hashMap.put("teacher103",editTextTeacher103);
+        hashMap.put("teacher104",editTextTeacher104);
+        hashMap.put("teacher105",editTextTeacher105);
+        hashMap.put("teacher106",editTextTeacher106);
+        //11
+        hashMap.put("lesson111",editTextLesson111);
+        hashMap.put("lesson112",editTextLesson112);
+        hashMap.put("lesson113",editTextLesson113);
+        hashMap.put("lesson114",editTextLesson114);
+        hashMap.put("lesson115",editTextLesson115);
+        hashMap.put("lesson116",editTextLesson116);
+
+        hashMap.put("auditores111",editTextAuditores111);
+        hashMap.put("auditores112",editTextAuditores112);
+        hashMap.put("auditores113",editTextAuditores113);
+        hashMap.put("auditores114",editTextAuditores114);
+        hashMap.put("auditores115",editTextAuditores115);
+        hashMap.put("auditores116",editTextAuditores116);
+
+        hashMap.put("teacher111",editTextTeacher111);
+        hashMap.put("teacher112",editTextTeacher112);
+        hashMap.put("teacher113",editTextTeacher113);
+        hashMap.put("teacher114",editTextTeacher114);
+        hashMap.put("teacher115",editTextTeacher115);
+        hashMap.put("teacher116",editTextTeacher116);
+        //12
+        hashMap.put("lesson121",editTextLesson121);
+        hashMap.put("lesson122",editTextLesson122);
+        hashMap.put("lesson123",editTextLesson123);
+        hashMap.put("lesson124",editTextLesson124);
+        hashMap.put("lesson125",editTextLesson125);
+        hashMap.put("lesson126",editTextLesson126);
+
+        hashMap.put("auditores121",editTextAuditores121);
+        hashMap.put("auditores122",editTextAuditores122);
+        hashMap.put("auditores123",editTextAuditores123);
+        hashMap.put("auditores124",editTextAuditores124);
+        hashMap.put("auditores125",editTextAuditores125);
+        hashMap.put("auditores126",editTextAuditores126);
+
+        hashMap.put("teacher121",editTextTeacher121);
+        hashMap.put("teacher122",editTextTeacher122);
+        hashMap.put("teacher123",editTextTeacher123);
+        hashMap.put("teacher124",editTextTeacher124);
+        hashMap.put("teacher125",editTextTeacher125);
+        hashMap.put("teacher126",editTextTeacher126);
+        //13
+        hashMap.put("lesson131",editTextLesson131);
+        hashMap.put("lesson132",editTextLesson132);
+        hashMap.put("lesson133",editTextLesson133);
+        hashMap.put("lesson134",editTextLesson134);
+        hashMap.put("lesson135",editTextLesson135);
+        hashMap.put("lesson136",editTextLesson136);
+
+        hashMap.put("auditores131",editTextAuditores131);
+        hashMap.put("auditores132",editTextAuditores132);
+        hashMap.put("auditores133",editTextAuditores133);
+        hashMap.put("auditores134",editTextAuditores134);
+        hashMap.put("auditores135",editTextAuditores135);
+        hashMap.put("auditores136",editTextAuditores136);
+
+        hashMap.put("teacher131",editTextTeacher131);
+        hashMap.put("teacher132",editTextTeacher132);
+        hashMap.put("teacher133",editTextTeacher133);
+        hashMap.put("teacher134",editTextTeacher134);
+        hashMap.put("teacher135",editTextTeacher135);
+        hashMap.put("teacher136",editTextTeacher136);
+    }
+    //Получение расписания из firebase
+    private void getData(){
+        scheduleKey = new ArrayList<>();
+        scheduleValue = new ArrayList<>();
+        // Read from the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference(elementFacultet)
+                .child(elementSpinnerDirection).child(setElementSpinnerCource);
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                scheduleKey.clear();
+                scheduleValue.clear();
+                for(DataSnapshot snapshot1 : snapshot.getChildren()){
+                    scheduleKey.add(snapshot1.getKey());
+                    scheduleValue.add(snapshot1.getValue().toString());
+                    Log.d("TAG123", "Value is: " + snapshot1.getValue());
+                    Log.d("TAG123", "Key is: " + snapshot1.getKey());
+                }
+                setDataOnTextView();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+    private void setDataOnTextView() {
+        for (int i=0; i<scheduleKey.size();i++){
+            hashMap.get(scheduleKey.get(i)).setText(scheduleValue.get(i));
+        }
+        if(dialog.isShowing()) {
+            dialog.dismiss();
+        }
     }
 
     //Скрываем Navigation Bar (кнопки)
