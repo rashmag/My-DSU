@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditSchdule.LoginEditSchduleActivity">
+
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleAuth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="69dp"
+        android:autoSizeMaxTextSize="44sp"
+        android:autoSizeMinTextSize="30sp"
+        android:autoSizeStepGranularity="4sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/gothaprobla"
+        android:maxLines="1"
+        android:text="@string/authTitle"
+        android:textColor="@color/colorBlackTitleAuth"
+        android:textSize="44sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+
+    <TextView
+        android:id="@+id/textDirection"
+        android:layout_width="166dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="74dp"
+        android:layout_weight="2"
+        android:background="@drawable/form_gray_2activity"
+        android:fontFamily="@font/gothaproreg"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:text="Направление:"
+        android:textColor="@color/whiteAndBlack"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/passwordET"
+        app:layout_constraintTop_toBottomOf="@id/titleAuth" />
+
+    <TextView
+        android:id="@+id/textCource"
+        android:layout_width="166dp"
+        android:layout_height="37dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginStart="7dp"
+        android:layout_weight="1"
+        android:background="@drawable/form_gray_2activity"
+        android:fontFamily="@font/gothaproreg"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="5dp"
+        android:text="Курс:"
+        android:textAlignment="textStart"
+        android:textColor="@color/whiteAndBlack"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/textDirection"
+        app:layout_constraintTop_toTopOf="@id/textDirection"
+        tools:ignore="RtlCompat" />
+
+    <Spinner
+        android:id="@+id/spinnerDirection"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="2"
+        android:background="@drawable/form_spinner_facul"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintEnd_toEndOf="@id/textDirection"
+        app:layout_constraintStart_toStartOf="@id/textDirection"
+        app:layout_constraintTop_toBottomOf="@id/textDirection" />
+
+    <Spinner
+        android:id="@+id/spinnerCource"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_weight="1"
+        android:background="@drawable/form_spinner_facul"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintEnd_toEndOf="@id/textCource"
+        app:layout_constraintStart_toEndOf="@id/spinnerDirection"
+        app:layout_constraintTop_toTopOf="@id/spinnerDirection" />
+
+    <EditText
+        android:id="@+id/passwordET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="36dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/form_for_password"
+        android:fontFamily="@font/gothapro1ig"
+        android:hint="@string/textPasswordHint"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerDirection" />
+
+    <Button
+        android:id="@+id/btnEnter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/form_for_enter_blue"
+        android:fontFamily="@font/gothapro1ig"
+        android:text="@string/textEnterBtn"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/passwordET"
+        app:layout_constraintStart_toStartOf="@id/passwordET"
+        app:layout_constraintTop_toBottomOf="@id/passwordET" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/gothapro1ig"
+        android:gravity="center"
+        android:lineHeight="25dp"
+        android:text="Вход осуществляется исключительно \n старостами академических групп."
+        android:textColor="@color/textDirectionAuth"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textDirectionAuth"
+        app:layout_constraintEnd_toEndOf="@+id/passwordET"
+        app:layout_constraintStart_toStartOf="@+id/passwordET" />
+
+    <TextView
+        android:id="@+id/textDirectionAuth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:fontFamily="@font/gothapro1ig"
+        android:text="Приносим извинения за неудобства."
+        android:textColor="@color/textDirectionAuth"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/passwordET"
+        app:layout_constraintStart_toStartOf="@+id/passwordET" />
+</androidx.constraintlayout.widget.ConstraintLayout>

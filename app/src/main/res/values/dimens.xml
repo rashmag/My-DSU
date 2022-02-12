@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="formDayBtnWidth">0dp</dimen>
+    <dimen name="formDayBtnHeight">45dp</dimen>
+    <dimen name="formLessonsHeight">72dp</dimen>
+    <dimen name="formLessonsWidth">0dp</dimen>
+    <dimen name="mainLinLayoutHeight">530dp</dimen>
+    <dimen name="formLessonsHeightNumber">36dp</dimen>
+    <dimen name="formLessonsWidthNumber">24dp</dimen>
+    <dimen name="formDayNameBtnWidth">0dp</dimen>
+
+    <dimen name="textAnswerAppInFo">14sp</dimen>
+    <dimen name="nameDays">12sp</dimen>
+    <dimen name="btnDaysNumber">16sp</dimen>
+    <dimen name="textSizeLessons">14sp</dimen>
+    <dimen name="textSizeFormNumber">16sp</dimen>
+</resources>

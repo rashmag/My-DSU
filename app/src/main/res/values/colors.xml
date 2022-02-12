@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorBlackTitleAuth">#000000</color>
+    <color name="form_password_color">#32000000</color>
+    <color name="formEnter">#7CC9FF</color>
+    <color name="textDirectionAuth">#48000000</color>
+    <color name="purpleBtnMakeChanges">#A189FF</color>
+</resources>

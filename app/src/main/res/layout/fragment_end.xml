@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhiteFragmentTutorial"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/gothaproreg"
+        android:lineHeight="20dp"
+        android:text="Узнать больше о работе приложения и \nсоздателях можно в соответствующем \nразделе:"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="250dp"
+        android:layout_height="500dp"
+        android:layout_marginBottom="120dp"
+        android:src="@drawable/two_fragment_phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <View
+        android:id="@+id/strelka1"
+        android:layout_width="55dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="45dp"
+        android:background="@drawable/form_line_fragment_tutorial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/endBtn"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="325dp"
+        android:layout_height="37dp"
+        android:background="@drawable/circle_btn"
+        android:fontFamily="@font/gothaprobol"
+        android:text="Приступить"
+        android:textAllCaps="false"
+        android:layout_marginBottom="56dp"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

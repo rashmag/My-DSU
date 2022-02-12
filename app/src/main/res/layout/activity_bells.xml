@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBack"
+    tools:context="com.application.mydsu.Bells">
+
+    <TextView
+        android:id="@+id/nameSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/gothapromed"
+        android:hint="Имя"
+        android:textColor="@color/whiteAndBlack"
+        android:textColorHint="@color/colorBlackAndWhite"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/surNameSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:fontFamily="@font/gothapromed"
+        android:hint="Фамилия"
+        android:textColor="@color/whiteAndBlack"
+        android:textColorHint="@color/colorBlackAndWhite"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/nameSchedule"
+        app:layout_constraintTop_toTopOf="@+id/nameSchedule" />
+
+    <TextView
+        android:id="@+id/course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/gothapro1ig"
+        android:hint="Курс,"
+        android:textColor="@color/colorSubGroup"
+        android:textColorHint="@color/colorBlackAndWhite"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/nameSchedule"
+        app:layout_constraintTop_toBottomOf="@+id/nameSchedule" />
+
+    <TextView
+        android:id="@+id/sobgroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:fontFamily="@font/gothapro1ig"
+        android:hint="Подгруппа"
+        android:textColor="@color/colorSubGroup"
+        android:textColorHint="@color/colorBlackAndWhite"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/course"
+        app:layout_constraintTop_toTopOf="@+id/course" />
+
+
+    <TextView
+        android:id="@+id/textTitleBells"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/gothaprobla"
+        android:text="Расписание \nзвонков"
+        android:textColor="@color/whiteAndBlack"
+        android:textSize="44sp"
+        app:layout_constraintStart_toStartOf="@+id/course"
+        app:layout_constraintTop_toBottomOf="@+id/course" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="@dimen/formLessonsWidth"
+        android:layout_height="0dp"
+        android:layout_marginTop="34dp"
+        android:background="@color/colorBack"
+        android:fadingEdgeLength="60dp"
+        android:overScrollMode="never"
+        android:requiresFadingEdge="vertical"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitleBells"
+        app:layout_constraintWidth_percent="0.83">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/form_bells1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/formLessonsHeight"
+                android:background="@drawable/form_schedule_lessons"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/form_bells2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/formLessonsHeight"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/form_schedule_lessons"
+                app:layout_constraintEnd_toEndOf="@+id/form_bells1"
+                app:layout_constraintStart_toStartOf="@+id/form_bells1"
+                app:layout_constraintTop_toBottomOf="@+id/form_bells1" />
+
+            <TextView
+                android:id="@+id/form_bells3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/formLessonsHeight"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/form_schedule_lessons"
+                app:layout_constraintEnd_toEndOf="@+id/form_bells2"
+                app:layout_constraintStart_toStartOf="@+id/form_bells2"
+                app:layout_constraintTop_toBottomOf="@+id/form_bells2" />
+
+            <TextView
+                android:id="@+id/form_bells4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/formLessonsHeight"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/form_schedule_lessons"
+                app:layout_constraintEnd_toEndOf="@+id/form_bells3"
+                app:layout_constraintStart_toStartOf="@+id/form_bells3"
+                app:layout_constraintTop_toBottomOf="@+id/form_bells3" />
+
+            <TextView
+                android:id="@+id/form_bells5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/formLessonsHeight"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/form_schedule_lessons"
+                app:layout_constraintEnd_toEndOf="@+id/form_bells4"
+                app:layout_constraintStart_toStartOf="@+id/form_bells4"
+                app:layout_constraintTop_toBottomOf="@+id/form_bells4" />
+
+            <TextView
+                android:id="@+id/form_bells6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/formLessonsHeight"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/form_schedule_lessons"
+                app:layout_constraintEnd_toEndOf="@+id/form_bells5"
+                app:layout_constraintStart_toStartOf="@+id/form_bells5"
+                app:layout_constraintTop_toBottomOf="@+id/form_bells5" />
+
+            <TextView
+                android:id="@+id/numberFormBells1"
+                android:layout_width="@dimen/formLessonsWidthNumber"
+                android:layout_height="@dimen/formLessonsHeightNumber"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/form_bells_number"
+                android:fontFamily="@font/gothaprobol"
+                android:gravity="center"
+                android:paddingHorizontal="5dp"
+                android:text="1"
+                android:textColor="@color/colorTextNumber"
+                android:textSize="@dimen/textSizeFormNumber"
+                app:layout_constraintBottom_toBottomOf="@+id/form_bells1"
+                app:layout_constraintStart_toStartOf="@+id/form_bells1"
+                app:layout_constraintTop_toTopOf="@+id/form_bells1" />
+
+            <TextView
+                android:id="@+id/numberFormBells2"
+                android:layout_width="@dimen/formLessonsWidthNumber"
+                android:layout_height="@dimen/formLessonsHeightNumber"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/form_bells_number"
+                android:fontFamily="@font/gothaprobol"
+                android:gravity="center"
+                android:paddingHorizontal="5dp"
+                android:text="2"
+                android:textColor="@color/colorTextNumber"
+                android:textSize="@dimen/textSizeFormNumber"
+                app:layout_constraintBottom_toBottomOf="@+id/form_bells2"
+                app:layout_constraintStart_toStartOf="@+id/form_bells2"
+                app:layout_constraintTop_toTopOf="@+id/form_bells2" />
+
+            <TextView
+                android:id="@+id/numberFormBells3"
+                android:layout_width="@dimen/formLessonsWidthNumber"
+                android:layout_height="@dimen/formLessonsHeightNumber"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/form_bells_number"
+                android:fontFamily="@font/gothaprobol"
+                android:gravity="center"
+                android:paddingHorizontal="5dp"
+                android:text="3"
+                android:textColor="@color/colorTextNumber"
+                android:textSize="@dimen/textSizeFormNumber"
+                app:layout_constraintBottom_toBottomOf="@+id/form_bells3"
+                app:layout_constraintStart_toStartOf="@+id/form_bells3"
+                app:layout_constraintTop_toTopOf="@+id/form_bells3" />
+
+            <TextView
+                android:id="@+id/numberFormBells4"
+                android:layout_width="@dimen/formLessonsWidthNumber"
+                android:layout_height="@dimen/formLessonsHeightNumber"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/form_bells_number"
+                android:fontFamily="@font/gothaprobol"
+                android:gravity="center"
+                android:paddingHorizontal="5dp"
+                android:text="4"
+                android:textColor="@color/colorTextNumber"
+                android:textSize="@dimen/textSizeFormNumber"
+                app:layout_constraintBottom_toBottomOf="@+id/form_bells4"
+                app:layout_constraintStart_toStartOf="@+id/form_bells4"
+                app:layout_constraintTop_toTopOf="@+id/form_bells4" />
+
+            <TextView
+                android:id="@+id/numberFormBells5"
+                android:layout_width="@dimen/formLessonsWidthNumber"
+                android:layout_height="@dimen/formLessonsHeightNumber"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/form_bells_number"
+                android:fontFamily="@font/gothaprobol"
+                android:gravity="center"
+                android:paddingHorizontal="5dp"
+                android:text="5"
+                android:textColor="@color/colorTextNumber"
+                android:textSize="@dimen/textSizeFormNumber"
+                app:layout_constraintBottom_toBottomOf="@+id/form_bells5"
+                app:layout_constraintStart_toStartOf="@+id/form_bells5"
+                app:layout_constraintTop_toTopOf="@+id/form_bells5" />
+
+            <TextView
+                android:id="@+id/numberFormBells6"
+                android:layout_width="@dimen/formLessonsWidthNumber"
+                android:layout_height="@dimen/formLessonsHeightNumber"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/form_bells_number"
+                android:fontFamily="@font/gothaprobol"
+                android:gravity="center"
+                android:paddingHorizontal="5dp"
+                android:text="6"
+                android:textColor="@color/colorTextNumber"
+                android:textSize="@dimen/textSizeFormNumber"
+                app:layout_constraintBottom_toBottomOf="@+id/form_bells6"
+                app:layout_constraintStart_toStartOf="@+id/form_bells6"
+                app:layout_constraintTop_toTopOf="@+id/form_bells6" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="4dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/form_line_bells"
+                app:layout_constraintBottom_toBottomOf="@+id/form_bells1"
+                app:layout_constraintEnd_toEndOf="@+id/form_bells1"
+                app:layout_constraintStart_toStartOf="@+id/form_bells1"
+                app:layout_constraintTop_toTopOf="@+id/form_bells1" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="4dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/form_line_bells"
+                app:layout_constraintBottom_toBottomOf="@+id/form_bells2"
+                app:layout_constraintEnd_toEndOf="@+id/form_bells2"
+                app:layout_constraintStart_toStartOf="@+id/form_bells2"
+                app:layout_constraintTop_toTopOf="@+id/form_bells2" />
+
+            <View
+                android:id="@+id/line3"
+                android:layout_width="4dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/form_line_bells"
+                app:layout_constraintBottom_toBottomOf="@+id/form_bells3"
+                app:layout_constraintEnd_toEndOf="@+id/form_bells3"
+                app:layout_constraintStart_toStartOf="@+id/form_bells3"
+                app:layout_constraintTop_toTopOf="@+id/form_bells3" />
+
+            <View
+                android:id="@+id/line4"
+                android:layout_width="4dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/form_line_bells"
+                app:layout_constraintBottom_toBottomOf="@+id/form_bells4"
+                app:layout_constraintEnd_toEndOf="@+id/form_bells4"
+                app:layout_constraintStart_toStartOf="@+id/form_bells4"
+                app:layout_constraintTop_toTopOf="@+id/form_bells4" />
+
+            <View
+                android:id="@+id/line5"
+                android:layout_width="4dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/form_line_bells"
+                app:layout_constraintBottom_toBottomOf="@+id/form_bells5"
+                app:layout_constraintEnd_toEndOf="@+id/form_bells5"
+                app:layout_constraintStart_toStartOf="@+id/form_bells5"
+                app:layout_constraintTop_toTopOf="@+id/form_bells5" />
+
+            <View
+                android:id="@+id/line6"
+                android:layout_width="4dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/form_line_bells"
+                app:layout_constraintBottom_toBottomOf="@+id/form_bells6"
+                app:layout_constraintEnd_toEndOf="@+id/form_bells6"
+                app:layout_constraintStart_toStartOf="@+id/form_bells6"
+                app:layout_constraintTop_toTopOf="@+id/form_bells6" />
+
+            <TextView
+                android:id="@+id/timeHour8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapromed"
+                android:text="8:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/timeMin830"
+                app:layout_constraintEnd_toStartOf="@+id/timeMin830" />
+
+            <TextView
+                android:id="@+id/timeMin830"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="30"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintEnd_toStartOf="@+id/line1"
+                app:layout_constraintTop_toTopOf="@+id/numberFormBells1" />
+
+            <TextView
+                android:id="@+id/timeHour9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapromed"
+                android:text="9:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/numberFormBells1"
+                app:layout_constraintStart_toStartOf="@+id/timeHour8" />
+
+            <TextView
+                android:id="@+id/timeMin915"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="15"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/numberFormBells1"
+                app:layout_constraintStart_toEndOf="@+id/timeHour9" />
+
+            <TextView
+                android:id="@+id/timeHour920"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="@font/gothapromed"
+                android:text="9:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/timeMin830"
+                app:layout_constraintStart_toEndOf="@+id/line1" />
+
+            <TextView
+                android:id="@+id/timeMin920"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="20"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintStart_toEndOf="@+id/timeHour920"
+                app:layout_constraintTop_toTopOf="@+id/timeMin830" />
+
+            <TextView
+                android:id="@+id/timeHour1005"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapromed"
+                android:text="10:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/timeMin915"
+                app:layout_constraintStart_toStartOf="@+id/timeHour920" />
+
+            <TextView
+                android:id="@+id/timeMin1005"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="05"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1005"
+                app:layout_constraintTop_toTopOf="@+id/timeHour1005" />
+
+            <TextView
+                android:id="@+id/timeHour1015"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapromed"
+                android:text="10:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintEnd_toStartOf="@+id/timeMin1015"
+                app:layout_constraintStart_toStartOf="@+id/timeHour8"
+                app:layout_constraintTop_toTopOf="@+id/timeMin1015" />
+
+            <TextView
+                android:id="@+id/timeMin1015"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="15"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1015"
+                app:layout_constraintTop_toTopOf="@+id/numberFormBells2" />
+
+            <TextView
+                android:id="@+id/timeHour1100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapromed"
+                android:text="11:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/numberFormBells2"
+                app:layout_constraintStart_toStartOf="@+id/timeHour1015" />
+
+            <TextView
+                android:id="@+id/timeMin1100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="00"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/timeHour1100"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1100" />
+
+            <TextView
+                android:id="@+id/timeHour1105"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="@font/gothapromed"
+                android:text="11:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintStart_toEndOf="@+id/line2"
+                app:layout_constraintTop_toTopOf="@+id/numberFormBells2" />
+
+            <TextView
+                android:id="@+id/timeMin1105"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="05"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1105"
+                app:layout_constraintTop_toTopOf="@+id/timeHour1105" />
+
+            <TextView
+                android:id="@+id/timeHour1150"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapromed"
+                android:text="11:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/numberFormBells2"
+                app:layout_constraintStart_toStartOf="@+id/timeHour1105" />
+
+            <TextView
+                android:id="@+id/timeMin1150"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="50"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/timeHour1150"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1150" />
+
+            <TextView
+                android:id="@+id/timeHour1220"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapromed"
+                android:text="12:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintEnd_toStartOf="@+id/timeMin1220"
+                app:layout_constraintStart_toStartOf="@+id/timeHour8"
+                app:layout_constraintTop_toTopOf="@+id/timeMin1220" />
+
+            <TextView
+                android:id="@+id/timeMin1220"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="20"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1220"
+                app:layout_constraintTop_toTopOf="@+id/numberFormBells3" />
+
+            <TextView
+                android:id="@+id/timeHour1305"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapromed"
+                android:text="13:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/numberFormBells3"
+                app:layout_constraintStart_toStartOf="@+id/timeHour1220" />
+
+            <TextView
+                android:id="@+id/timeMin1305"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="05"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/timeHour1305"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1305" />
+
+            <TextView
+                android:id="@+id/timeHour1310"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:fontFamily="@font/gothapromed"
+                android:text="13:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintStart_toEndOf="@+id/line3"
+                app:layout_constraintTop_toTopOf="@+id/numberFormBells3" />
+
+            <TextView
+                android:id="@+id/timeMin1310"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="10"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1310"
+                app:layout_constraintTop_toTopOf="@+id/timeHour1310" />
+
+            <TextView
+                android:id="@+id/timeHour1355"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapromed"
+                android:text="13:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/numberFormBells3"
+                app:layout_constraintStart_toStartOf="@+id/timeHour1310" />
+
+            <TextView
+                android:id="@+id/timeMin1355"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="55"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/timeHour1355"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1355" />
+
+            <TextView
+                android:id="@+id/timeHour1400"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapromed"
+                android:text="14:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintEnd_toStartOf="@+id/timeMin1405"
+                app:layout_constraintStart_toStartOf="@+id/timeHour8"
+                app:layout_constraintTop_toTopOf="@+id/timeMin1400" />
+
+            <TextView
+                android:id="@+id/timeMin1400"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="10"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/numberFormBells4"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1405"
+                app:layout_constraintTop_toTopOf="@+id/numberFormBells4" />
+
+            <TextView
+                android:id="@+id/timeHour1520"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="@font/gothapromed"
+                android:text="15:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/numberFormBells4"
+                app:layout_constraintStart_toEndOf="@+id/line4"
+                app:layout_constraintTop_toTopOf="@+id/numberFormBells4" />
+
+            <TextView
+                android:id="@+id/timeMin1520"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="20"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1520"
+                app:layout_constraintTop_toTopOf="@+id/timeHour1520" />
+
+            <TextView
+                android:id="@+id/timeHour1405"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapromed"
+                android:text="15:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintEnd_toStartOf="@+id/timeMin1405"
+                app:layout_constraintStart_toStartOf="@+id/timeHour8"
+                app:layout_constraintTop_toTopOf="@+id/timeMin1405" />
+
+            <TextView
+                android:id="@+id/timeMin1405"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="30"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/numberFormBells5"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1405"
+                app:layout_constraintTop_toTopOf="@+id/numberFormBells5" />
+
+            <TextView
+                android:id="@+id/timeHour1635"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="@font/gothapromed"
+                android:text="16:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/numberFormBells5"
+                app:layout_constraintStart_toEndOf="@+id/line5"
+                app:layout_constraintTop_toTopOf="@+id/numberFormBells5" />
+
+            <TextView
+                android:id="@+id/timeMin1720"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="40"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/timeHour1635"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1635" />
+
+            <TextView
+                android:id="@+id/timeHour1650"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapromed"
+                android:text="16:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintEnd_toStartOf="@+id/timeMin1650"
+                app:layout_constraintStart_toStartOf="@+id/timeHour8"
+                app:layout_constraintTop_toTopOf="@+id/timeMin1650" />
+
+            <TextView
+                android:id="@+id/timeMin1650"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="50"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/numberFormBells6"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1405"
+                app:layout_constraintTop_toTopOf="@+id/numberFormBells6" />
+
+            <TextView
+                android:id="@+id/timeHour1800"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="@font/gothapromed"
+                android:text="18:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/numberFormBells6"
+                app:layout_constraintStart_toEndOf="@+id/line6"
+                app:layout_constraintTop_toTopOf="@+id/numberFormBells6" />
+
+            <TextView
+                android:id="@+id/timeMin1800"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothapro1ig"
+                android:text="00"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="@dimen/textSizeLessons"
+                app:layout_constraintBottom_toBottomOf="@+id/timeHour1800"
+                app:layout_constraintStart_toEndOf="@+id/timeHour1800" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/remainingTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp"
+        android:fontFamily="@font/gothapro1ig"
+        android:gravity="center"
+        android:text="00:00"
+        android:textColor="@color/whiteAndBlack"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/scrollView"
+        app:layout_constraintStart_toStartOf="@id/scrollView" />
+
+
+    <TextView
+        android:id="@+id/textRemained"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/gothapro1ig"
+        android:text="Осталось до конца пары"
+        android:textColor="@color/colorTextDiscription"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/scrollView"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@id/scrollView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

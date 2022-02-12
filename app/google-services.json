@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "936239041899",
+    "firebase_url": "https://my-dsu-b9532-default-rtdb.firebaseio.com",
+    "project_id": "my-dsu-b9532",
+    "storage_bucket": "my-dsu-b9532.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936239041899:android:237cd4629f3be9e71f902e",
+        "android_client_info": {
+          "package_name": "com.application.mydsu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936239041899-vqbjv31g49j3f9i8t84oesjr5rfktjo3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKYz-iti4rU0j1WfxMiSISDZFLUPTadRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936239041899-vqbjv31g49j3f9i8t84oesjr5rfktjo3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

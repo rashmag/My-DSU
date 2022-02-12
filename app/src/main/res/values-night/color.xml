@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--MainActivity Start-->
+    <color name="textMyDSU">#FFFFFF</color>
+    <color name="btnNews">#7CC9FF</color>
+    <color name="colorNewsText">#191919</color>
+    <color name="colorSubGroup">#56FFFFFF</color>
+    <color name="colorGrayBtnNews">#2B2B2B</color>
+
+
+    <!--MainActivity End-->
+
+    <!--InformationAboutTheApp Start-->
+    <color name="colorSubGroupSchedule">#56FFFFFF</color>
+    <color name="colorScheduleFormLessonsWeek">#08FFFFFF</color>
+    <color name="colorBtnDefaultSchedule">#06FFFFFF</color>
+    <color name="colorBtnDefaultScheduleText">#80FFFFFF</color>
+    <color name="colorWindowDialogDefault">#2B2B2B</color>
+    <!--InformationAboutTheApp End-->
+
+    <!--Bells Start-->
+    <color name="colorTextDiscription">#56FFFFFF</color>
+    <color name="colorNumberBells">#7CC9FF</color>
+    <!--Bells End-->
+
+
+    <color name="colorIconSplash">#ffffff</color>
+    <color name="stroke_user_photo">#7CC9FF</color>
+    <color name="toastBackground">#08FFFFFF</color>
+    <color name="colorTextImpotence">#50FFFFFF</color>
+    <color name="colorElementOfImpotenceSelected">#50FFFFFF</color>
+    <color name="addUserAndSurNameText">#12FFFFFF</color>
+    <color name="colorCardViewBackgroundHomeWork">#2B2B2B</color>
+    <color name="colorDialogAddUser">#2B2B2B</color>
+    <color name="colorNumberSchedule">#16FFFFFF</color>
+    <color name="aboutMeHintTextNameAndSurName">#50FFFFFF</color>
+    <color name="spinner_arrow">#50FFFFFF</color>
+    <color name="colorTextNumber">#2B2B2B</color>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorBlue">#59B8FC</color>
+    <color name="colorBlackAndWhite">#56FFFFFF</color>
+    <color name="colorGreyText">#686868</color>
+    <color name="colorBack">#191919</color>
+    <color name="colorGreyTextNews">#b3b3b3</color>
+    <color name="colorBorder">#AB63BE</color>
+    <color name="aboutMeTextNameAndSureName">#FFFFFF</color>
+    <color name="colorBorderBlue">#4DB1FA</color>
+    <color name="colorEmailForm">#7CC9FF</color>
+    <color name="colorGrayBtn2Activity">#565656</color>
+    <color name="colorSpinner">#10FFFFFF</color>
+    <color name="colorSpinnerText">#A5A5A5</color>
+    <color name="colorBtnEnabledResume">#29FFFFFF</color>
+    <color name="colorBlackHint">#40000000</color>
+    <color name="colorWhiteFackText">#80FFFFFF</color>
+    <color name="colorFormFack">#08FFFFFF</color>
+    <color name="whiteAndBlack">#FFFFFF</color>
+    <color name="close_dafeult_gtn">#40FFFFFF</color>
+    <color name="colorBtnTextLightAndTheme">#FFFFFF</color>
+
+    <color name="colorWhiteOpacity">#24FFFFFF</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBtnSchedule">#14FFFFFF</color>
+    <color name="colorBtnLightAndTheme">#08FFFFFF</color>
+    <color name="colorBlack">#191919</color>
+    <color name="colorBlackEmail">#191919</color>
+    <color name="colorTextSchedule">#191919</color>
+    <color name="colorDatePublish">#16FFFFFF</color>
+    <color name="colorLine">#08FFFFFF</color>
+    <color name="colorFormSwipe">#08ffffff</color>
+    <color name="swipeIcon">#F5F5F5</color>
+    <color name="colorNews">#191919</color>
+    <color name="colorEnabledBtnResume">#000000</color>
+    <color name="gray">#655F5F</color>
+    <color name="colorHomeWorkLine">#534F4F</color>
+
+    //Расписание
+    <color name="colorButtonScheduleBlue">#51b4fb</color>
+    <color name="colorButtonSchedulePink">#A189FF</color>
+    <color name="colorScheduleFormLessons">#08FFFFFF</color>
+    <color name="colorFormLessonsNumber">#16FFFFFF</color>
+    <color name="colorTextCourseAndSobgroup">#a3a3a4</color>
+    <color name="colorToDayBtn">#04EC04</color>
+    <color name="byDefailtSchedule">#CCFFFFFF</color>
+
+    //Звонки
+    <color name="colorButtonBellsBlue">#46adf2</color>
+    <color name="colorLineBells">#16FFFFFF</color>
+
+</resources>

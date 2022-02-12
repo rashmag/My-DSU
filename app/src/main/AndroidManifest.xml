@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.application.mydsu">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+
+    <application
+        android:name=".ApplicationClass"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".EditSchdule.EditSchduleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditSchdule.LoginEditSchduleActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6029526207746824~2437730968" />
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InformationAboutTheApp"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HomeWork.HomeWork"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Tutorial.ActivityStart"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Tutorial.AboutMeTutorial"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Tutorial.FragmentMain"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Bells"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AboutMe"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="AboutMe" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Schedule"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="Schedule" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SplashScreen"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboardHidden|keyboard|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            tools:replace="android:configChanges" />
+    </application>
+
+</manifest>

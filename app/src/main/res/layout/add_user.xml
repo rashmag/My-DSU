@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="339dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/description_form_alert_dialog">
+
+    <EditText
+        android:id="@+id/task"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="22dp"
+        android:backgroundTint="@android:color/transparent"
+        android:fontFamily="@font/gothaprobla"
+        android:hint="Предмет / задача"
+        android:layout_marginEnd="20dp"
+        android:inputType="textCapSentences|textMultiLine"
+        android:textColor="@color/whiteAndBlack"
+        android:textColorHint="@color/addUserAndSurNameText"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnClose"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="33dp"
+        android:backgroundTint="@android:color/transparent"
+        android:fontFamily="@font/gothaproreg"
+        android:hint="Что нужно сделать?"
+        android:inputType="textCapSentences|textMultiLine"
+        android:lineHeight="20dp"
+        android:textColor="@color/whiteAndBlack"
+        android:textColorHint="@color/addUserAndSurNameText"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/task" />
+
+    <ImageView
+        android:id="@+id/btnClose"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:gravity="center"
+        android:src="@drawable/close_window"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/saveOrUpdateBtn"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_add_task"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/gothaproreg"
+        android:text="Важность:"
+        android:textColor="@color/colorTextImpotence"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/description"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <ImageView
+        android:id="@+id/selectedGreen"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:visibility="invisible"
+        android:src="@drawable/element_of_impotence_selected"
+        app:layout_constraintBottom_toBottomOf="@+id/greeenSelectedImpotence"
+        app:layout_constraintEnd_toEndOf="@+id/greeenSelectedImpotence"
+        app:layout_constraintStart_toStartOf="@+id/greeenSelectedImpotence"
+        app:layout_constraintTop_toTopOf="@+id/greeenSelectedImpotence" />
+
+
+
+    <ImageView
+        android:id="@+id/selectedYellow"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:visibility="invisible"
+        android:src="@drawable/element_of_impotence_selected"
+        app:layout_constraintBottom_toBottomOf="@+id/yellowSelectedImpotence"
+        app:layout_constraintEnd_toEndOf="@+id/yellowSelectedImpotence"
+        app:layout_constraintStart_toStartOf="@+id/yellowSelectedImpotence"
+        app:layout_constraintTop_toTopOf="@+id/yellowSelectedImpotence" />
+
+
+
+    <ImageView
+        android:id="@+id/selectedRed"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:visibility="invisible"
+        android:src="@drawable/element_of_impotence_selected"
+        app:layout_constraintBottom_toBottomOf="@+id/redSelectedImpotence"
+        app:layout_constraintEnd_toEndOf="@+id/redSelectedImpotence"
+        app:layout_constraintStart_toStartOf="@+id/redSelectedImpotence"
+        app:layout_constraintTop_toTopOf="@+id/redSelectedImpotence" />
+
+    <ImageView
+        android:id="@+id/greeenSelectedImpotence"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/element_of_impotence_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <ImageView
+        android:id="@+id/yellowSelectedImpotence"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/element_of_impotence_yellow"
+        app:layout_constraintBottom_toBottomOf="@+id/greeenSelectedImpotence"
+        app:layout_constraintStart_toEndOf="@+id/greeenSelectedImpotence"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <ImageView
+        android:id="@+id/redSelectedImpotence"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/element_of_impotence_red"
+        app:layout_constraintBottom_toBottomOf="@+id/yellowSelectedImpotence"
+        app:layout_constraintStart_toEndOf="@+id/yellowSelectedImpotence"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+</androidx.constraintlayout.widget.ConstraintLayout>

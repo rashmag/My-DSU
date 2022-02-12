@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorWhiteFragmentTutorial"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/gothaproreg"
+        android:lineHeight="20dp"
+        android:text="Интерфейс прост в использовании, как \nдважды два."
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="400dp"
+        android:layout_marginBottom="125dp"
+        android:src="@drawable/two_fragment_phone"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/gothaproreg"
+        android:lineHeight="15dp"
+        android:text="переход \nв Личный кабинет"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="200dp"
+        android:layout_height="400dp"
+        android:layout_marginBottom="56dp"
+        android:layout_marginStart="110dp"
+        android:src="@drawable/fragment_three_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="21dp"
+        android:fontFamily="@font/gothaproreg"
+        android:gravity="right"
+        android:lineHeight="15dp"
+        android:text="раписание \nзвонков"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        android:layout_marginBottom="46dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+         />
+
+    <View
+        android:id="@+id/strelka1"
+        android:layout_width="89dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/form_line_fragment_tutorial"
+        app:layout_constraintBottom_toBottomOf="@+id/textView6"
+        app:layout_constraintStart_toEndOf="@+id/textView6" />
+
+    <View
+        android:id="@+id/strelka2"
+        android:layout_width="2dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/form_line_fragment_tutorial"
+        app:layout_constraintEnd_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <View
+        android:id="@+id/strelka3"
+        android:layout_width="40dp"
+        android:layout_height="2dp"
+        android:background="@drawable/form_line_fragment_tutorial"
+        app:layout_constraintBottom_toBottomOf="@+id/strelka2"
+        app:layout_constraintEnd_toStartOf="@+id/strelka2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

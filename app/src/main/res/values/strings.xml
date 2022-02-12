@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Мой ДГУ</string>
+    <string name="app_edit">Edit</string>
+    <string name="app_raspisanie">Расписание</string>
+    <string name="btnOnMain">На главную</string>
+    <string name="ten">2.10</string>
+    <string name="authTitle">Авторизация</string>
+    <string name="textPasswordHint">Пароль</string>
+    <string name="textEnterBtn">Войти</string>
+    <string-array name="facultetSpinner">
+        <item>Информатики и Информационных Технологий</item>
+        <item>Химический</item>
+        <item>Физический</item>
+        <item>Экономический</item>
+    </string-array>
+
+    <string-array name="directionSpinner">
+        <item>ИСиТ</item>
+        <item>ПИЭ</item>
+        <item>ИБ</item>
+        <item>ПИМ</item>
+    </string-array>
+
+    <string-array name="courceSpinner">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="souGroupSpinner">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

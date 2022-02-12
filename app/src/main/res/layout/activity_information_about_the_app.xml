@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBack"
+    android:paddingHorizontal="36dp"
+    tools:context=".InformationAboutTheApp">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/relDesignAndDev"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutScroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/scrollView"
+            app:layout_constraintEnd_toEndOf="@+id/scrollView"
+            app:layout_constraintStart_toStartOf="@+id/scrollView"
+            app:layout_constraintTop_toTopOf="@+id/scrollView">
+
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:src="@drawable/ic_my_dgu_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/gothapromed"
+                android:gravity="left"
+                android:text="Часто задаваемые вопросы"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/gothaproreg"
+                android:onClick="mycontent1"
+                android:text="Для чего требуется email?"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+            <ImageView
+                android:id="@+id/spinner_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="mycontent1"
+                android:src="@drawable/spinner_arrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+            <RelativeLayout
+                android:id="@+id/relLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_arrow"
+                app:layout_constraintStart_toStartOf="@+id/textView10"
+                app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/mycontent1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="24dp"
+                    app:ael_duration="250"
+                    app:ael_expanded="false"
+                    app:ael_interpolator="accelerate"
+                    app:ael_orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="match_parent"
+                        android:layout_height="114dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/gothapro1ig"
+                        android:lineHeight="20dp"
+                        android:text="В будущем мы планируем оповещать пользователей о важных изменениях в работе приложения. На данный момент\nввод почтового ящика носит чисто символический характер."
+                        android:textColor="@color/whiteAndBlack"
+                        android:textSize="@dimen/textAnswerAppInFo" />
+
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/mycontent1"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/colorLine" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/gothaproreg"
+                android:lineHeight="20dp"
+                android:onClick="mycontent1"
+                android:text="Почему нет расписания конкретных \nгрупп/факультетов?"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_arrow2"
+                app:layout_constraintStart_toStartOf="@+id/relLayout"
+                app:layout_constraintTop_toBottomOf="@+id/relLayout" />
+
+
+            <ImageView
+                android:id="@+id/spinner_arrow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="mycontent1"
+                android:src="@drawable/spinner_arrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+            <RelativeLayout
+                android:id="@+id/relLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_arrow2"
+                app:layout_constraintStart_toStartOf="@+id/textView12"
+                app:layout_constraintTop_toBottomOf="@+id/textView12">
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/mycontent2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="28dp"
+                    app:ael_duration="250"
+                    app:ael_expanded="false"
+                    app:ael_interpolator="accelerate"
+                    app:ael_orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="match_parent"
+                        android:layout_height="114dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/gothapro1ig"
+                        android:lineHeight="20dp"
+                        android:text="Процесс расширения базы расписаний занимает много времени, ведь создателям приходится вручную вводить расписание каждой группы. Если вы желаете помочь, пожалуйста, напишите нам."
+                        android:textColor="@color/whiteAndBlack"
+                        android:textSize="@dimen/textAnswerAppInFo" />
+
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/mycontent2"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/colorLine" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/gothaproreg"
+                android:lineHeight="20dp"
+                android:onClick="mycontent1"
+                android:text="Как добавить пары в субботу?"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_arrow3"
+                app:layout_constraintStart_toStartOf="@+id/relLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/relLayout2" />
+
+            <ImageView
+                android:id="@+id/spinner_arrow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="mycontent1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView16"
+                app:srcCompat="@drawable/spinner_arrow"
+                tools:ignore="VectorDrawableCompat" />
+
+            <RelativeLayout
+                android:id="@+id/relLayout3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_arrow3"
+                app:layout_constraintStart_toStartOf="@+id/textView16"
+                app:layout_constraintTop_toBottomOf="@+id/textView16">
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/mycontent3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20dp"
+                    app:ael_duration="250"
+                    app:ael_expanded="false"
+                    app:ael_interpolator="accelerate"
+                    app:ael_orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="match_parent"
+                        android:layout_height="169dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/gothapro1ig"
+                        android:lineHeight="20dp"
+                        android:text="Возможность добавления пар в субботу ещё не предусмотрена.\nЕсли вам требуется полностью скорректировать расписание, напишите нам на почту с указанием своего факультета, курса и группы. При следующем обновлении мы учтем ваши пожелания.
+Приложение обновляется каждый месяц."
+                        android:textColor="@color/whiteAndBlack"
+                        android:textSize="@dimen/textAnswerAppInFo"
+                        app:layout_constraintStart_toStartOf="@+id/textView16"
+                        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+                <View
+                    android:id="@+id/line3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/mycontent3"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/colorLine" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/gothaproreg"
+                android:gravity="left"
+                android:onClick="mycontent1"
+                android:text="Как я могу поддержать проект?"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_arrow4"
+                app:layout_constraintStart_toStartOf="@+id/relLayout3"
+                app:layout_constraintTop_toBottomOf="@+id/relLayout3" />
+
+            <ImageView
+                android:id="@+id/spinner_arrow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="mycontent1"
+                android:src="@drawable/spinner_arrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView18" />
+
+            <RelativeLayout
+                android:id="@+id/relLayout4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_arrow4"
+                app:layout_constraintStart_toStartOf="@+id/textView18"
+                app:layout_constraintTop_toBottomOf="@+id/textView18">
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/mycontent4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    app:ael_duration="250"
+                    app:ael_expanded="false"
+                    app:ael_interpolator="accelerate"
+                    app:ael_orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/gothapro1ig"
+                        android:gravity="left"
+                        android:lineHeight="20dp"
+
+                        android:text="Нам приятно осознавать, что наше приложение полезно для вас. Мы продолжаем создавать приложения, направленные на оптимизацию учебных и образовательных процессов.
+\nФинансово поддержать проект и разработчиков можно совершив перевод на наш счет:
+"
+                        android:textColor="@color/whiteAndBlack"
+                        android:textSize="@dimen/textAnswerAppInFo"
+                        app:layout_constraintStart_toStartOf="@+id/textView18"
+                        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+
+                    <TextView
+                        android:id="@+id/cardNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView19"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="26dp"
+                        android:background="@drawable/circle_btn"
+                        android:fontFamily="@font/gothaprobol"
+                        android:onClick="copiedText"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"
+                        android:text="4276 6000 4371 1940"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignTop="@+id/cardNumber"
+                        android:layout_alignBottom="@+id/cardNumber"
+                        android:layout_marginStart="8dp"
+                        android:layout_toEndOf="@+id/cardNumber"
+                        android:onClick="copiedText"
+                        android:src="@drawable/copy_icon" />
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cardNumber"
+                        android:layout_alignEnd="@+id/cardNumber"
+                        android:layout_alignParentStart="@+id/cardNumber"
+                        android:layout_alignParentEnd="@+id/cardNumber"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="9dp"
+                        android:fontFamily="@font/gothapro1ig"
+                        android:text="Сбербанк, Гаджиева Т. М."
+                        android:textColor="@color/whiteAndBlack"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/textView25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView21"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/gothapro1ig"
+                        android:text="Спасибо!"
+                        android:textColor="@color/whiteAndBlack"
+                        android:textSize="14sp" />
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relDesignAndDev"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:layout_marginBottom="28dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView">
+
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:alpha="0.32"
+            android:fontFamily="@font/gothapro1ig"
+            android:gravity="center"
+            android:lineHeight="17dp"
+            android:text="Design: Taya Gadzhiyeva\nDevelopment: Magomed Rashidov"
+            android:textColor="@color/whiteAndBlack" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView23"
+            android:layout_centerHorizontal="true"
+            android:alpha="0.32"
+            android:fontFamily="@font/gothapro1ig"
+            android:gravity="center"
+            android:text="Contact us: educateddev@gmail.com"
+            android:textColor="@color/whiteAndBlack" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

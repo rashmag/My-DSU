@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.application.mydsu"
+        minSdkVersion 19
+        multiDexEnabled true
+        targetSdkVersion 30
+        versionCode 9
+        versionName "2.5"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        checkReleaseBuilds false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+ //   implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+
+    implementation 'com.android.support:multidex:1.0.3'
+    //Реклама
+    implementation 'com.google.android.gms:play-services-ads:19.7.0'
+    //Оценка приложения
+    implementation 'com.google.android.play:core:1.9.0'
+    //Crop image
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    //Firebase
+    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+
+}
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'

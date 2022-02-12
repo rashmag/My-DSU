@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBack"
+    android:orientation="vertical"
+    tools:context="com.application.mydsu.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/userPhoto"
+        android:layout_width="166dp"
+        android:layout_height="166dp"
+        android:onClick="InAboutMe"
+        app:layout_constraintEnd_toEndOf="@+id/stroke"
+        app:layout_constraintTop_toTopOf="@id/stroke"
+        app:layout_constraintStart_toStartOf="@+id/stroke"
+        app:layout_constraintBottom_toBottomOf="@id/stroke"
+        android:src="@drawable/user_default_photo" />
+
+    <ImageView
+        android:id="@+id/stroke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/stroke_dark"
+        app:layout_constraintEnd_toEndOf="@+id/btnOpen"
+        app:layout_constraintTop_toTopOf="@+id/MyDGUText" />
+
+    <ScrollView
+        android:id="@+id/scrollViewMainActivity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_below="@id/subgroup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="2dp"
+        android:background="@color/colorBack"
+        android:fadingEdgeLength="200dp"
+        android:requiresFadingEdge="vertical"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/raspisanie"
+        app:layout_constraintEnd_toEndOf="@+id/btnOpen"
+        app:layout_constraintStart_toStartOf="@+id/btnOpen"
+        app:layout_constraintTop_toTopOf="@+id/btnOpen"
+        app:layout_constraintWidth_percent="0.83">
+
+        <RelativeLayout
+            android:id="@+id/relLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                android:id="@+id/mycontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/form_news_btn"
+                android:paddingVertical="15dp"
+                app:ael_duration="250"
+                app:ael_expanded="false"
+                app:ael_interpolator="accelerate"
+                app:ael_orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titleRightText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/rightText"
+                    android:layout_alignParentStart="@id/rightText"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/gothapromed"
+                    android:text="Задачи и задания"
+                    android:textColor="@color/aboutMeTextNameAndSureName"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/rightText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleRightText"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toStartOf="@+id/mycontent"
+                    android:layout_toEndOf="@+id/mycontent"
+                    android:fontFamily="@font/gothapro1ig"
+                    android:gravity="top|left"
+                    android:lineHeight="12dp"
+                    android:text="Теперь вы можете фиксировать предстоящие задачи
+и домашние задания! Перейти в новый раздел можно
+нажав на иконку в правом нижнем углу."
+                    android:textColor="@color/aboutMeTextNameAndSureName"
+                    android:textSize="11sp" />
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/rightText"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/colorLine" />
+
+                <TextView
+                    android:id="@+id/titleRightText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/line"
+                    android:layout_alignStart="@+id/rightText"
+                    android:layout_alignParentStart="@id/rightText2"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/gothapromed"
+                    android:text="На чьей стороне ты?"
+                    android:textColor="@color/aboutMeTextNameAndSureName"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/rightText2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleRightText2"
+                    android:layout_alignStart="@+id/rightText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="6dp"
+                    android:layout_toEndOf="@+id/mycontent"
+                    android:fontFamily="@font/gothapro1ig"
+                    android:gravity="top|left"
+                    android:lineHeight="12dp"
+                    android:text="Рады рассказать, что в приложении стали доступны\nдве темы! Сменить тему можно в разделе\n“Редактирование профиля”."
+                    android:textColor="@color/aboutMeTextNameAndSureName"
+                    android:textSize="11sp" />
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/rightText2"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="4dp"
+                    android:background="@color/colorLine" />
+
+                <TextView
+                    android:id="@+id/titleRightText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/line2"
+                    android:layout_alignStart="@+id/rightText"
+                    android:layout_alignParentStart="@id/rightText3"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/gothapromed"
+                    android:text="ДГУ в твоем кармане"
+                    android:textColor="@color/aboutMeTextNameAndSureName"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/rightText3"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_below="@+id/titleRightText3"
+                    android:layout_alignStart="@+id/rightText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/gothapro1ig"
+                    android:lineHeight="12dp"
+                    android:text="В любое время вы можете получить доступ к своему расписанию."
+                    android:textColor="@color/aboutMeTextNameAndSureName"
+                    android:textSize="11sp" />
+
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <TextView
+        android:id="@+id/btnOpen"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_below="@id/subgroup"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/circle_btn"
+        android:fontFamily="@font/gothaprobol"
+        android:onClick="showmyinformation"
+        android:paddingHorizontal="24dp"
+        android:gravity="center_vertical"
+        android:text="Новости "
+        android:textAllCaps="false"
+        android:textColor="@color/colorNewsText"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subgroup"
+        app:layout_constraintWidth_percent="0.83" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/raspisanie"
+        app:layout_constraintEnd_toEndOf="@+id/btnOpen" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintSwipe"
+        android:layout_width="0dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="invisible"
+        android:layout_height="wrap_content"
+        android:background="@drawable/swipe_form"
+        app:layout_constraintBottom_toTopOf="@+id/raspisanie"
+        app:layout_constraintEnd_toEndOf="@+id/btnOpen"
+        app:layout_constraintStart_toStartOf="@+id/btnOpen">
+
+        <ImageView
+            android:id="@+id/btnClose"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            android:onClick="closeSwipe"
+            android:src="@drawable/close_window"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintSwipe"
+            app:layout_constraintEnd_toEndOf="@+id/constraintSwipe"
+            app:layout_constraintTop_toTopOf="@+id/constraintSwipe" />
+
+        <ImageView
+            android:id="@+id/swipeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:src="@drawable/ic_swipe_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintSwipe"
+            app:layout_constraintEnd_toStartOf="@+id/swipeView"
+            app:layout_constraintStart_toStartOf="@+id/constraintSwipe"
+            app:layout_constraintTop_toTopOf="@+id/constraintSwipe" />
+
+
+        <TextView
+            android:id="@+id/swipeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="54dp"
+            android:layout_marginEnd="105dp"
+            android:fontFamily="@font/gothaprobol"
+            android:text="Попробуйте жестами"
+            android:textColor="@color/whiteAndBlack"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/raspisanie"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignStart="@+id/MyDGUText"
+        android:layout_alignEnd="@+id/btnOpen"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/circle"
+        android:fontFamily="@font/gothaprobol"
+        android:gravity="center"
+        android:onClick="onScheduleActivity"
+        android:src="@drawable/ic_schedule_btn"
+        android:text="@string/app_raspisanie"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.83" />
+
+    <ImageView
+        android:id="@+id/btnHomewWok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="InHomewWork"
+        android:src="@drawable/ic_home_work_icon_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/raspisanie"
+        app:layout_constraintEnd_toEndOf="@+id/btnOpen"
+        app:layout_constraintTop_toTopOf="@+id/raspisanie" />
+
+    <ImageView
+        android:id="@+id/MyDGUText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnOpen"
+        android:layout_marginTop="36dp"
+        android:onClick="InformationAboutTheApp"
+        android:src="@drawable/ic_my_dgu_text_black"
+        app:layout_constraintStart_toStartOf="@+id/btnOpen"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userPhoto"
+        android:layout_alignStart="@+id/MyDGUText"
+        android:layout_marginTop="43dp"
+        android:fontFamily="@font/gothaprobla"
+        android:hint="Имя"
+        android:onClick="InAboutMe"
+        android:textColor="@color/aboutMeTextNameAndSureName"
+        android:textColorHint="@color/colorBlackAndWhite"
+        android:textSize="44sp"
+        app:layout_constraintStart_toStartOf="@+id/MyDGUText"
+        app:layout_constraintTop_toBottomOf="@+id/userPhoto" />
+
+    <TextView
+        android:id="@+id/surName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_alignStart="@+id/name"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/gothaprobla"
+        android:hint="Фамилия"
+        android:onClick="InAboutMe"
+        android:textColor="@color/aboutMeTextNameAndSureName"
+        android:textColorHint="@color/colorBlackAndWhite"
+        android:textSize="44sp"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/direction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/surName"
+        android:layout_alignStart="@+id/surName"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/gothapromed"
+        android:hint="Направление"
+        android:maxLength="17"
+        android:onClick="InAboutMe"
+        android:singleLine="true"
+        android:textColor="@color/aboutMeTextNameAndSureName"
+        android:textColorHint="@color/colorBlackAndWhite"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/surName"
+        app:layout_constraintTop_toBottomOf="@+id/surName" />
+
+    <TextView
+        android:id="@+id/subgroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/direction"
+        android:layout_alignStart="@+id/direction"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/gothapro1ig"
+        android:hint="Подгруппа"
+        android:onClick="InAboutMe"
+        android:textAllCaps="false"
+        android:textColor="@color/colorSubGroup"
+        android:textColorHint="@color/colorBlackAndWhite"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/direction"
+        app:layout_constraintTop_toBottomOf="@+id/direction" />
+
+<!--    <pl.droidsonroids.gif.GifImageView-->
+<!--        android:id="@+id/gifSnow"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="700dp"-->
+<!--        android:src="@drawable/snow"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
