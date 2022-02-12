@@ -180,7 +180,7 @@ public class LoginEditSchduleActivity extends AppCompatActivity {
         btnEnter = findViewById(R.id.btnEnter);
         passwordET = findViewById(R.id.passwordET);
     }
-
+    //Проверка полей авторизации
     private void LoginEditSchedule() {
         String password = passwordET.getText().toString();
         if (TextUtils.isEmpty(elementSpinnerDirection)) {
