@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkInfo;
@@ -22,7 +23,9 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -239,6 +242,7 @@ public class EditSchduleActivity extends AppCompatActivity {
             editTextLessonDB134, editTextAuditoresDB134, editTextTeacherDB134,
             editTextLessonDB135, editTextAuditoresDB135, editTextTeacherDB135,
             editTextLessonDB136, editTextAuditoresDB136, editTextTeacherDB136;
+    ArrayList<EditText> editTextsMas = new ArrayList<>();
     private FirebaseUser user;
     private Button outUserTV;
     private TextView tochka, tochka2;
@@ -261,6 +265,7 @@ public class EditSchduleActivity extends AppCompatActivity {
             dayOfMonthPlus11, dayOfMonthPlus12, dayOfMonthPlus13;
     private Calendar calendar,maxDayOfMonth;
     private Button makeChangesBtn;
+    private boolean flag = false;
     private LinearLayout linearLayout1, linearLayout2, linearLayout3, linearLayout4, linearLayout5,
             linearLayout6, linearLayout8, linearLayout9, linearLayout10, linearLayout11,
             linearLayout12, linearLayout13, groupsButton1, groupsButton2;
@@ -339,6 +344,7 @@ public class EditSchduleActivity extends AppCompatActivity {
                 signOut();
             }
         });
+
     }
 
     private class AsyncSetInHashMap extends AsyncTask<Void, Void, Void> {
@@ -654,7 +660,335 @@ public class EditSchduleActivity extends AppCompatActivity {
             dialog.dismiss();
         }
     }
+    private class SetETInMasAsync extends AsyncTask<Void, Void, Void> {
 
+        @Override
+        protected Void doInBackground(Void... voids) {
+            setETInMas();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void unused) {
+            super.onPostExecute(unused);
+            startCycle();
+        }
+    }
+    private void setETInMas(){
+        editTextsMas.add(editTextLesson11);
+        editTextsMas.add(editTextAuditores11);
+        editTextsMas.add(editTextTeacher11);
+
+        editTextsMas.add(editTextLesson12);
+        editTextsMas.add(editTextAuditores12);
+        editTextsMas.add(editTextTeacher12);
+
+        editTextsMas.add(editTextLesson13);
+        editTextsMas.add(editTextAuditores13);
+        editTextsMas.add(editTextTeacher13);
+
+        editTextsMas.add(editTextLesson14);
+        editTextsMas.add(editTextAuditores14);
+        editTextsMas.add(editTextTeacher14);
+
+        editTextsMas.add(editTextLesson15);
+        editTextsMas.add(editTextAuditores15);
+        editTextsMas.add(editTextTeacher15);
+
+        editTextsMas.add(editTextLesson16);
+        editTextsMas.add(editTextAuditores16);
+        editTextsMas.add(editTextTeacher16);
+
+        editTextsMas.add(editTextLesson21);
+        editTextsMas.add(editTextAuditores21);
+        editTextsMas.add(editTextTeacher21);
+
+        editTextsMas.add(editTextLesson22);
+        editTextsMas.add(editTextAuditores22);
+        editTextsMas.add(editTextTeacher22);
+
+        editTextsMas.add(editTextLesson23);
+        editTextsMas.add(editTextAuditores23);
+        editTextsMas.add(editTextTeacher23);
+
+        editTextsMas.add(editTextLesson24);
+        editTextsMas.add(editTextAuditores24);
+        editTextsMas.add(editTextTeacher24);
+
+        editTextsMas.add(editTextLesson25);
+        editTextsMas.add(editTextAuditores25);
+        editTextsMas.add(editTextTeacher25);
+
+        editTextsMas.add(editTextLesson26);
+        editTextsMas.add(editTextAuditores26);
+        editTextsMas.add(editTextTeacher26);
+
+        editTextsMas.add(editTextLesson31);
+        editTextsMas.add(editTextAuditores31);
+        editTextsMas.add(editTextTeacher31);
+
+        editTextsMas.add(editTextLesson32);
+        editTextsMas.add(editTextAuditores32);
+        editTextsMas.add(editTextTeacher32);
+
+        editTextsMas.add(editTextLesson33);
+        editTextsMas.add(editTextAuditores33);
+        editTextsMas.add(editTextTeacher33);
+
+        editTextsMas.add(editTextLesson34);
+        editTextsMas.add(editTextAuditores34);
+        editTextsMas.add(editTextTeacher34);
+
+        editTextsMas.add(editTextLesson35);
+        editTextsMas.add(editTextAuditores35);
+        editTextsMas.add(editTextTeacher35);
+
+        editTextsMas.add(editTextLesson36);
+        editTextsMas.add(editTextAuditores36);
+        editTextsMas.add(editTextTeacher36);
+
+        editTextsMas.add(editTextLesson41);
+        editTextsMas.add(editTextAuditores41);
+        editTextsMas.add(editTextTeacher41);
+
+        editTextsMas.add(editTextLesson42);
+        editTextsMas.add(editTextAuditores42);
+        editTextsMas.add(editTextTeacher42);
+
+        editTextsMas.add(editTextLesson43);
+        editTextsMas.add(editTextAuditores43);
+        editTextsMas.add(editTextTeacher43);
+
+        editTextsMas.add(editTextLesson44);
+        editTextsMas.add(editTextAuditores44);
+        editTextsMas.add(editTextTeacher44);
+
+        editTextsMas.add(editTextLesson45);
+        editTextsMas.add(editTextAuditores45);
+        editTextsMas.add(editTextTeacher45);
+
+        editTextsMas.add(editTextLesson46);
+        editTextsMas.add(editTextAuditores46);
+        editTextsMas.add(editTextTeacher46);
+
+        editTextsMas.add(editTextLesson51);
+        editTextsMas.add(editTextAuditores51);
+        editTextsMas.add(editTextTeacher51);
+
+        editTextsMas.add(editTextLesson52);
+        editTextsMas.add(editTextAuditores52);
+        editTextsMas.add(editTextTeacher52);
+
+        editTextsMas.add(editTextLesson53);
+        editTextsMas.add(editTextAuditores53);
+        editTextsMas.add(editTextTeacher53);
+
+        editTextsMas.add(editTextLesson54);
+        editTextsMas.add(editTextAuditores54);
+        editTextsMas.add(editTextTeacher54);
+
+        editTextsMas.add(editTextLesson55);
+        editTextsMas.add(editTextAuditores55);
+        editTextsMas.add(editTextTeacher55);
+
+        editTextsMas.add(editTextLesson56);
+        editTextsMas.add(editTextAuditores56);
+        editTextsMas.add(editTextTeacher56);
+
+        editTextsMas.add(editTextLesson61);
+        editTextsMas.add(editTextAuditores61);
+        editTextsMas.add(editTextTeacher61);
+
+        editTextsMas.add(editTextLesson62);
+        editTextsMas.add(editTextAuditores62);
+        editTextsMas.add(editTextTeacher62);
+
+        editTextsMas.add(editTextLesson63);
+        editTextsMas.add(editTextAuditores63);
+        editTextsMas.add(editTextTeacher63);
+
+        editTextsMas.add(editTextLesson64);
+        editTextsMas.add(editTextAuditores64);
+        editTextsMas.add(editTextTeacher64);
+
+        editTextsMas.add(editTextLesson65);
+        editTextsMas.add(editTextAuditores65);
+        editTextsMas.add(editTextTeacher65);
+
+        editTextsMas.add(editTextLesson66);
+        editTextsMas.add(editTextAuditores66);
+        editTextsMas.add(editTextTeacher66);
+
+
+        editTextsMas.add(editTextLesson81);
+        editTextsMas.add(editTextAuditores81);
+        editTextsMas.add(editTextTeacher81);
+
+        editTextsMas.add(editTextLesson82);
+        editTextsMas.add(editTextAuditores82);
+        editTextsMas.add(editTextTeacher82);
+
+        editTextsMas.add(editTextLesson83);
+        editTextsMas.add(editTextAuditores83);
+        editTextsMas.add(editTextTeacher83);
+
+        editTextsMas.add(editTextLesson84);
+        editTextsMas.add(editTextAuditores84);
+        editTextsMas.add(editTextTeacher84);
+
+        editTextsMas.add(editTextLesson85);
+        editTextsMas.add(editTextAuditores85);
+        editTextsMas.add(editTextTeacher85);
+
+        editTextsMas.add(editTextLesson86);
+        editTextsMas.add(editTextAuditores86);
+        editTextsMas.add(editTextTeacher86);
+
+        editTextsMas.add(editTextLesson91);
+        editTextsMas.add(editTextAuditores91);
+        editTextsMas.add(editTextTeacher91);
+
+        editTextsMas.add(editTextLesson92);
+        editTextsMas.add(editTextAuditores92);
+        editTextsMas.add(editTextTeacher92);
+
+        editTextsMas.add(editTextLesson93);
+        editTextsMas.add(editTextAuditores93);
+        editTextsMas.add(editTextTeacher93);
+
+        editTextsMas.add(editTextLesson94);
+        editTextsMas.add(editTextAuditores94);
+        editTextsMas.add(editTextTeacher94);
+
+        editTextsMas.add(editTextLesson95);
+        editTextsMas.add(editTextAuditores95);
+        editTextsMas.add(editTextTeacher95);
+
+        editTextsMas.add(editTextLesson96);
+        editTextsMas.add(editTextAuditores96);
+        editTextsMas.add(editTextTeacher96);
+
+        editTextsMas.add(editTextLesson101);
+        editTextsMas.add(editTextAuditores101);
+        editTextsMas.add(editTextTeacher101);
+
+        editTextsMas.add(editTextLesson102);
+        editTextsMas.add(editTextAuditores102);
+        editTextsMas.add(editTextTeacher102);
+
+        editTextsMas.add(editTextLesson103);
+        editTextsMas.add(editTextAuditores103);
+        editTextsMas.add(editTextTeacher103);
+
+        editTextsMas.add(editTextLesson104);
+        editTextsMas.add(editTextAuditores104);
+        editTextsMas.add(editTextTeacher104);
+
+        editTextsMas.add(editTextLesson105);
+        editTextsMas.add(editTextAuditores105);
+        editTextsMas.add(editTextTeacher105);
+
+        editTextsMas.add(editTextLesson106);
+        editTextsMas.add(editTextAuditores106);
+        editTextsMas.add(editTextTeacher106);
+
+        editTextsMas.add(editTextLesson111);
+        editTextsMas.add(editTextAuditores111);
+        editTextsMas.add(editTextTeacher111);
+
+        editTextsMas.add(editTextLesson112);
+        editTextsMas.add(editTextAuditores112);
+        editTextsMas.add(editTextTeacher112);
+
+        editTextsMas.add(editTextLesson113);
+        editTextsMas.add(editTextAuditores113);
+        editTextsMas.add(editTextTeacher113);
+
+        editTextsMas.add(editTextLesson114);
+        editTextsMas.add(editTextAuditores114);
+        editTextsMas.add(editTextTeacher114);
+
+        editTextsMas.add(editTextLesson115);
+        editTextsMas.add(editTextAuditores115);
+        editTextsMas.add(editTextTeacher115);
+
+        editTextsMas.add(editTextLesson116);
+        editTextsMas.add(editTextAuditores116);
+        editTextsMas.add(editTextTeacher116);
+
+        editTextsMas.add(editTextLesson121);
+        editTextsMas.add(editTextAuditores121);
+        editTextsMas.add(editTextTeacher121);
+
+        editTextsMas.add(editTextLesson122);
+        editTextsMas.add(editTextAuditores122);
+        editTextsMas.add(editTextTeacher122);
+
+        editTextsMas.add(editTextLesson123);
+        editTextsMas.add(editTextAuditores123);
+        editTextsMas.add(editTextTeacher123);
+
+        editTextsMas.add(editTextLesson124);
+        editTextsMas.add(editTextAuditores124);
+        editTextsMas.add(editTextTeacher124);
+
+        editTextsMas.add(editTextLesson125);
+        editTextsMas.add(editTextAuditores125);
+        editTextsMas.add(editTextTeacher125);
+
+        editTextsMas.add(editTextLesson126);
+        editTextsMas.add(editTextAuditores126);
+        editTextsMas.add(editTextTeacher126);
+
+        editTextsMas.add(editTextLesson131);
+        editTextsMas.add(editTextAuditores131);
+        editTextsMas.add(editTextTeacher131);
+
+        editTextsMas.add(editTextLesson132);
+        editTextsMas.add(editTextAuditores132);
+        editTextsMas.add(editTextTeacher132);
+
+        editTextsMas.add(editTextLesson133);
+        editTextsMas.add(editTextAuditores133);
+        editTextsMas.add(editTextTeacher133);
+
+        editTextsMas.add(editTextLesson134);
+        editTextsMas.add(editTextAuditores134);
+        editTextsMas.add(editTextTeacher134);
+
+        editTextsMas.add(editTextLesson135);
+        editTextsMas.add(editTextAuditores135);
+        editTextsMas.add(editTextTeacher135);
+
+        editTextsMas.add(editTextLesson136);
+        editTextsMas.add(editTextAuditores136);
+        editTextsMas.add(editTextTeacher136);
+    }
+    private void startCycle(){
+        for(int i=0; i<editTextsMas.size();i++){
+            editTextsMas.get(i).addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                }
+
+                @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    if(flag){
+                        makeChangesBtn.setBackgroundDrawable(
+                                getDrawable(R.drawable.form_for_enter_blue));
+                        makeChangesBtn.setText("Внести изменения");
+                        flag = false;
+                    }
+                }
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                }
+            });
+        }
+    }
     //Intent назад
     private void backStep() {
         Intent intentBack;
@@ -3082,6 +3416,7 @@ public class EditSchduleActivity extends AppCompatActivity {
                         makeChangesBtn.setBackgroundDrawable(
                                 getDrawable(R.drawable.form_for_enter_purple));
                         makeChangesBtn.setText("Изменения сохранены");
+                        flag = true;
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -3614,7 +3949,7 @@ public class EditSchduleActivity extends AppCompatActivity {
         editTextTeacher134 = findViewById(R.id.editTextTeacher134);
         editTextTeacher135 = findViewById(R.id.editTextTeacher135);
         editTextTeacher136 = findViewById(R.id.editTextTeacher136);
-
+        new SetETInMasAsync().execute();
     }
     @Override
     public void onStop() {
