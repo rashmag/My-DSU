@@ -152,7 +152,7 @@
                     android:layout_alignParentStart="@id/rightText3"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/gothapromed"
-                    android:text="ДГУ в твоем кармане"
+                    android:text="ДГТУ в твоем кармане"
                     android:textColor="@color/aboutMeTextNameAndSureName"
                     android:textSize="14dp" />
 
