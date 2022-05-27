@@ -293,17 +293,20 @@
         app:layout_constraintEnd_toEndOf="@+id/btnOpen"
         app:layout_constraintTop_toTopOf="@+id/raspisanie" />
 
-    <ImageView
+    <TextView
         android:id="@+id/MyDGUText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnOpen"
         android:layout_marginTop="36dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
         android:onClick="InformationAboutTheApp"
-        android:src="@drawable/ic_my_dgu_text_black"
+        android:text="Мой\nДГТУ"
+        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="@+id/btnOpen"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/name"

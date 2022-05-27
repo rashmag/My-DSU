@@ -31,15 +31,20 @@
             app:layout_constraintTop_toTopOf="@+id/scrollView">
 
 
-            <ImageView
+            <TextView
                 android:id="@+id/imageView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/btnOpen"
                 android:layout_marginTop="36dp"
-                android:src="@drawable/ic_my_dgu_text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Мой\nДГТУ"
+                android:textColor="#7CC9FF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
                 android:id="@+id/textView9"
@@ -369,7 +374,7 @@
                         android:layout_marginTop="13dp"
                         android:layout_marginEnd="9dp"
                         android:fontFamily="@font/gothapro1ig"
-                        android:text="Сбербанк, Гаджиева Т. М."
+                        android:text="Сбербанк, Рашидов А. Р."
                         android:textColor="@color/whiteAndBlack"
                         android:textSize="12sp" />
 
@@ -412,7 +417,7 @@
             android:fontFamily="@font/gothapro1ig"
             android:gravity="center"
             android:lineHeight="17dp"
-            android:text="Design: Taya Gadzhiyeva\nDevelopment: Magomed Rashidov"
+            android:text="Design and Development: Rashidov Abdurashid"
             android:textColor="@color/whiteAndBlack" />
 
         <TextView
