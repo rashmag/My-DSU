@@ -4742,7 +4742,7 @@ public class Schedule extends AppCompatActivity {
         // Read from the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(elementFacultet)
-                .child(elementSpinnerDirection).child(setElementSpinnerCource);
+                .child(elementSpinnerDirection).child(setElementSpinnerCource).child(elementSpinnerSubgroupCource);
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

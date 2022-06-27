@@ -252,8 +252,8 @@ public class EditSchduleActivity extends AppCompatActivity {
     private TextView form_lessons_sunday,
             form_lessons_sunday_text, course, sobgroup;
     boolean flagTheme;
-    private String  setElementCource,
-            elementSubgroupCource, elementDirection,elementFacultet;
+    private String  elementCource,
+            elementSubGroup, elementDirection,elementFacultet;
     private SharedPreferences sharedPreferences,prefs;
     private ScrollView scrollView;
 
@@ -630,7 +630,7 @@ public class EditSchduleActivity extends AppCompatActivity {
         // Read from the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(elementFacultet)
-                .child(elementDirection).child(setElementCource);
+                .child(elementDirection).child(elementCource).child(elementSubGroup);
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -2470,16 +2470,17 @@ public class EditSchduleActivity extends AppCompatActivity {
     private void setData() {
         sharedPreferences = getSharedPreferences("userdata", Context.MODE_PRIVATE);
 
-        setElementCource = sharedPreferences.getString("setElementSpinnerCource", "");
-        elementSubgroupCource = sharedPreferences.getString("elementSpinnerSubgroupCource", "");
+        elementCource = sharedPreferences.getString("setElementSpinnerCource", "");
+        Log.d("test1","elementCource = " + elementCource);
+        elementSubGroup = sharedPreferences.getString("elementSpinnerSubgroupCource", "");
         elementDirection = sharedPreferences.getString("elementSpinnerDirection", "");
         elementFacultet = sharedPreferences.getString("setElementSpinnerFacultet", "");
 
         course = findViewById(R.id.course);
         sobgroup = findViewById(R.id.sobgroup);
 
-        course.setText(setElementCource + " курс, ");
-        sobgroup.setText(elementSubgroupCource + " подгруппа");
+        course.setText(elementCource + " курс, ");
+        sobgroup.setText(elementSubGroup + " подгруппа");
     }
 
     //Intent для выхода из аккаунта
@@ -3402,10 +3403,12 @@ public class EditSchduleActivity extends AppCompatActivity {
         }
     }
     private void sendData(){
+        Log.d("test1","elementSubgroupCource = " + elementSubGroup);
+        Log.d("test1","setElementCource = " + elementCource);
         HashMap<String, Object> params = new HashMap<>();
-        params.put(setElementCource, modelSchedule);
+        params.put(elementSubGroup, modelSchedule);
         FirebaseDatabase.getInstance().
-                getReference(elementFacultet).child(elementDirection)
+                getReference(elementFacultet).child(elementDirection).child(elementCource)
                 .updateChildren(params)
                 .addOnSuccessListener(new com.google.android.gms.tasks
                         .OnSuccessListener<Void>() {

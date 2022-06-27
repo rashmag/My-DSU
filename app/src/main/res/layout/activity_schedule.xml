@@ -12,7 +12,7 @@
         android:id="@+id/btnMakeChanges"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:src="@drawable/bell"
+        android:src="@drawable/update"
         android:layout_marginEnd="20dp"
         android:onClick="InHomeWork"
         app:layout_constraintEnd_toStartOf="@id/btnHomeWork"

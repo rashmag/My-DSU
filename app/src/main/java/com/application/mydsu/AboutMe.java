@@ -552,7 +552,7 @@ public class AboutMe extends AppCompatActivity implements AdapterView.OnItemSele
 
 
     //СОХРАНЯЕМ ДАННЫЕ С ПОМОЩЬЮ SHARED PREFERENCES - НАЧАЛО
-    public void saveData() {
+    private void saveData() {
         userName = findViewById(R.id.userName);
         surName = findViewById(R.id.userSurName);
         email = findViewById(R.id.Email);

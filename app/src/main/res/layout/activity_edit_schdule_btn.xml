@@ -38,65 +38,127 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgBack" />
 
-    <TextView
-        android:id="@+id/textDirection"
-        android:layout_width="166dp"
-        android:layout_height="37dp"
+    <LinearLayout
+        android:id="@+id/linLayPickDir"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="74dp"
-        android:layout_weight="2"
-        android:background="@drawable/form_gray_2activity"
-        android:fontFamily="@font/gothaproreg"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="16dp"
-        android:text="Направление:"
-        android:textColor="@color/whiteAndBlack"
-        android:textSize="14sp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@id/passwordET"
         app:layout_constraintStart_toStartOf="@+id/passwordET"
-        app:layout_constraintTop_toBottomOf="@id/titleAuth" />
+        app:layout_constraintTop_toBottomOf="@id/titleAuth">
 
-    <TextView
-        android:id="@+id/textCource"
-        android:layout_width="166dp"
-        android:layout_height="37dp"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginStart="7dp"
-        android:layout_weight="1"
-        android:background="@drawable/form_gray_2activity"
-        android:fontFamily="@font/gothaproreg"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="5dp"
-        android:text="Курс:"
-        android:textAlignment="textStart"
-        android:textColor="@color/whiteAndBlack"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@id/textDirection"
-        app:layout_constraintTop_toTopOf="@id/textDirection"
-        tools:ignore="RtlCompat" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
 
-    <Spinner
-        android:id="@+id/spinnerDirection"
-        android:layout_width="0dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="8dp"
-        android:layout_weight="2"
-        android:background="@drawable/form_spinner_facul"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="10dp"
-        app:layout_constraintEnd_toEndOf="@id/textDirection"
-        app:layout_constraintStart_toStartOf="@id/textDirection"
-        app:layout_constraintTop_toBottomOf="@id/textDirection" />
+            <TextView
+                android:id="@+id/textDirection"
+                android:layout_width="166dp"
+                android:layout_height="37dp"
+                android:layout_weight="0"
+                android:background="@drawable/form_gray_2activity"
+                android:fontFamily="@font/gothaproreg"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:text="Направление:"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/passwordET"
+                app:layout_constraintTop_toBottomOf="@id/titleAuth" />
 
-    <Spinner
-        android:id="@+id/spinnerCource"
-        android:layout_width="0dp"
-        android:layout_height="37dp"
-        android:layout_weight="1"
-        android:background="@drawable/form_spinner_facul"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="10dp"
-        app:layout_constraintEnd_toEndOf="@id/textCource"
-        app:layout_constraintStart_toEndOf="@id/spinnerDirection"
-        app:layout_constraintTop_toTopOf="@id/spinnerDirection" />
+
+            <TextView
+                android:id="@+id/textCource"
+                android:layout_width="166dp"
+                android:layout_height="37dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="2"
+                android:background="@drawable/form_gray_2activity"
+                android:fontFamily="@font/gothaproreg"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="5dp"
+                android:text="Курс:"
+                android:textAlignment="textStart"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/textDirection"
+                app:layout_constraintTop_toTopOf="@id/textDirection"
+                tools:ignore="RtlCompat" />
+
+
+            <TextView
+                android:id="@+id/textSubGroup"
+                android:layout_width="166dp"
+                android:layout_height="37dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="2"
+                android:background="@drawable/form_gray_2activity"
+                android:fontFamily="@font/gothaproreg"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="5dp"
+                android:text="Подгр:"
+                android:textAlignment="textStart"
+                android:textColor="@color/whiteAndBlack"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/textDirection"
+                app:layout_constraintTop_toTopOf="@id/textDirection"
+                tools:ignore="RtlCompat" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Spinner
+                android:id="@+id/spinnerDirection"
+                android:layout_width="0dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="2"
+                android:background="@drawable/form_spinner_facul"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="10dp"
+                app:layout_constraintEnd_toEndOf="@id/textDirection"
+                app:layout_constraintStart_toStartOf="@id/textDirection"
+                app:layout_constraintTop_toBottomOf="@id/textDirection" />
+
+            <Spinner
+                android:id="@+id/spinnerCource"
+                android:layout_width="0dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/form_spinner_facul"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="10dp"
+                app:layout_constraintEnd_toEndOf="@id/textCource"
+                app:layout_constraintStart_toEndOf="@id/spinnerDirection"
+                app:layout_constraintTop_toTopOf="@id/spinnerDirection" />
+
+            <Spinner
+                android:id="@+id/spinnerSubGroup"
+                android:layout_width="0dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/form_spinner_facul"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="10dp"
+                app:layout_constraintEnd_toEndOf="@id/textCource"
+                app:layout_constraintStart_toEndOf="@id/spinnerDirection"
+                app:layout_constraintTop_toTopOf="@id/spinnerDirection" />
+
+        </LinearLayout>
+    </LinearLayout>
 
     <EditText
         android:id="@+id/passwordET"
@@ -108,13 +170,13 @@
         android:fontFamily="@font/gothapro1ig"
         android:hint="@string/textPasswordHint"
         android:inputType="textPassword"
-        android:textColorHint="@color/passwordHint"
         android:textAlignment="center"
         android:textColor="@color/colorBlackTextPassword"
+        android:textColorHint="@color/passwordHint"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinnerDirection" />
+        app:layout_constraintTop_toBottomOf="@id/linLayPickDir" />
 
     <Button
         android:id="@+id/btnEnter"
