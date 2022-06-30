@@ -412,10 +412,9 @@ public class AboutMe extends AppCompatActivity implements AdapterView.OnItemSele
                 elementSpinnerFacultetInt = selectedItemPosition;
                 if (elementSpinnerFacultet.contentEquals("Информатики и Информационных Технологий")) {
                     List<String> listDirection = new ArrayList<String>() {{
-                        add("ИСиТ");
-                        add("ПИЭ");
-                        add("ИБ");
-                        add("ПИМ");
+                        add("Пр.инф. в упр.фин.");
+                        add("Пр.инф. в дизайне");
+                        add("Пр.инф. в юриспр.");
                     }};
                     adapterDirection = new CustomAdapter(AboutMe.this, R.layout.item_spinner_title, R.layout.item_spinner_dropdown, listDirection);
                     spinnerDirection.setAdapter(adapterDirection);
@@ -457,27 +456,27 @@ public class AboutMe extends AppCompatActivity implements AdapterView.OnItemSele
                                        View itemSelected, int selectedItemPosition, long selectedId) {
                 elementSpinnerCource = spinnerCource.getSelectedItem().toString();
                 elementSpinnerCourceInt = selectedItemPosition;
-                if(elementSpinnerCource.contentEquals("1") && elementSpinnerFacultet.contentEquals("Информатики и Информационных Технологий")){
-                    List<String> listDirection = new ArrayList<String>() {{
-                        add("ИСиТ");
-                        add("ИБ");
-                        add("ИСиП");
-                        add("ПИЭ");
-                    }};
-                    adapterDirection = new CustomAdapter(AboutMe.this, R.layout.item_spinner_title, R.layout.item_spinner_dropdown, listDirection);
-                    spinnerDirection.setAdapter(adapterDirection);
-                    spinnerDirection.setSelection(elementSpinnerDirectionInt);
-                }else if(elementSpinnerFacultet.contentEquals("Информатики и Информационных Технологий")){
-                    List<String> listDirection = new ArrayList<String>() {{
-                        add("ИСиТ");
-                        add("ИБ");
-                        add("ПИМ");
-                        add("ПИЭ");
-                    }};
-                    adapterDirection = new CustomAdapter(AboutMe.this, R.layout.item_spinner_title, R.layout.item_spinner_dropdown, listDirection);
-                    spinnerDirection.setAdapter(adapterDirection);
-                    spinnerDirection.setSelection(elementSpinnerDirectionInt);
-                }
+//                if(elementSpinnerCource.contentEquals("1") && elementSpinnerFacultet.contentEquals("Информатики и Информационных Технологий")){
+//                    List<String> listDirection = new ArrayList<String>() {{
+//                        add("ИСиТ");
+//                        add("ИБ");
+//                        add("ИСиП");
+//                        add("ПИЭ");
+//                    }};
+//                    adapterDirection = new CustomAdapter(AboutMe.this, R.layout.item_spinner_title, R.layout.item_spinner_dropdown, listDirection);
+//                    spinnerDirection.setAdapter(adapterDirection);
+//                    spinnerDirection.setSelection(elementSpinnerDirectionInt);
+//                }else if(elementSpinnerFacultet.contentEquals("Информатики и Информационных Технологий")){
+//                    List<String> listDirection = new ArrayList<String>() {{
+//                        add("ИСиТ");
+//                        add("ИБ");
+//                        add("ПИМ");
+//                        add("ПИЭ");
+//                    }};
+//                    adapterDirection = new CustomAdapter(AboutMe.this, R.layout.item_spinner_title, R.layout.item_spinner_dropdown, listDirection);
+//                    spinnerDirection.setAdapter(adapterDirection);
+//                    spinnerDirection.setSelection(elementSpinnerDirectionInt);
+//                }
                 if(!test){
                     Integer elementSpinnerDirectionInt2 = sharedPreferences.getInt("elementSpinnerDirectionInt", 0);
                     spinnerDirection.setSelection(elementSpinnerDirectionInt2);
@@ -495,8 +494,9 @@ public class AboutMe extends AppCompatActivity implements AdapterView.OnItemSele
 
         //SPINNER SUBGROUPCOURCE - НАЧАЛО
         final List<String> listSubgroupCource = new ArrayList<String>() {{
-            add("1");
-            add("2");
+            add("И141");
+            add("Т142");
+            add("П141");
         }};
         adapterSubgroupCource = new CustomAdapter(this, R.layout.item_spinner_title, R.layout.item_spinner_dropdown, listSubgroupCource);
         spinnerSubgroupCource.setAdapter(adapterSubgroupCource);
@@ -595,21 +595,6 @@ public class AboutMe extends AppCompatActivity implements AdapterView.OnItemSele
         surName.setText(setUserSurName);
         email = findViewById(R.id.Email);
         email.setText(getEmail);
-    }
-
-
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d("themey","onStop");
-    }
-
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d("themey","onDestroy");
     }
 
     public void LightAndDarkTheme(View view) {

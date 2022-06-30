@@ -82,7 +82,7 @@ public class Bells extends AppCompatActivity {
         nameSchedule.setText(setUserName);
         surNameSchedule.setText(setUserSurName);
         course.setText(setElementSpinnerCource + " курс, ");
-        sobgroup.setText(elementSpinnerSubgroupCource + " подгруппа");
+        sobgroup.setText(elementSpinnerSubgroupCource + " группа");
     }
 
     //Определяем какое время

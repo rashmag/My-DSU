@@ -1728,7 +1728,7 @@ public class Schedule extends AppCompatActivity {
         nameSchedule.setText(setUserName);
         surNameSchedule.setText(setUserSurName);
         course.setText(setElementSpinnerCource + " курс, ");
-        sobgroup.setText(elementSpinnerSubgroupCource + " подгруппа");
+        sobgroup.setText(elementSpinnerSubgroupCource + " группа");
     }
 
     //РЕАЛИЗАЦИЯ ТОЧКИ

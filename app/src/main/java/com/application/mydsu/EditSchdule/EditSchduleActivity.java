@@ -2480,7 +2480,7 @@ public class EditSchduleActivity extends AppCompatActivity {
         sobgroup = findViewById(R.id.sobgroup);
 
         course.setText(elementCource + " курс, ");
-        sobgroup.setText(elementSubGroup + " подгруппа");
+        sobgroup.setText(elementSubGroup + " группа");
     }
 
     //Intent для выхода из аккаунта

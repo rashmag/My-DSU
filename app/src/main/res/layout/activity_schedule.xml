@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:fontFamily="@font/gothapro1ig"
-        android:hint="Подгруппа"
+        android:hint="Группа"
         android:textColor="@color/colorSubGroupSchedule"
         android:textColorHint="@color/colorBlackAndWhite"
         android:textSize="14sp"

@@ -366,7 +366,7 @@
         android:layout_alignStart="@+id/direction"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/gothapro1ig"
-        android:hint="Подгруппа"
+        android:hint="Группа"
         android:onClick="InAboutMe"
         android:textAllCaps="false"
         android:textColor="@color/colorSubGroup"

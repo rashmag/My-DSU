@@ -101,7 +101,7 @@
                 android:fontFamily="@font/gothaproreg"
                 android:gravity="center_vertical"
                 android:paddingHorizontal="5dp"
-                android:text="Подгр:"
+                android:text="Группа:"
                 android:textAlignment="textStart"
                 android:textColor="@color/whiteAndBlack"
                 android:textSize="14sp"

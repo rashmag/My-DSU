@@ -187,7 +187,7 @@
                 android:fontFamily="@font/gothaproreg"
                 android:gravity="center"
                 android:paddingHorizontal="5dp"
-                android:text="Подгр:"
+                android:text="Группа:"
                 android:textColor="@color/whiteAndBlack"
                 android:textSize="14sp" />
         </LinearLayout>

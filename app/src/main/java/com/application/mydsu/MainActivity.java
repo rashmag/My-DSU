@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
         course = findViewById(R.id.course);
         TextView subgroup = findViewById(R.id.subgroup);
         direction = findViewById(R.id.direction);
-        subgroup.setText(elementSpinnerSubgroupCource + " подгруппа");
+        subgroup.setText(elementSpinnerSubgroupCource + " группа");
         direction.setText(elementSpinnerDirection + ", " + setElementSpinnerCource + " курс");
         surName.setText(setUserSurName);
         name.setText(setUserName);
