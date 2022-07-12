@@ -19,13 +19,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity2"
+            android:name=".EditSchedule.EditScheduleActivity"
             android:exported="false" />
         <activity
-            android:name=".EditSchdule.EditSchduleActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EditSchdule.LoginEditSchduleActivity"
+            android:name=".EditSchedule.LoginEditSchduleActivity"
             android:exported="false" />
 
         <meta-data
@@ -54,6 +51,7 @@
             android:name=".Bells"
             android:screenOrientation="portrait" />
         <activity
+            android:exported="true"
             android:name=".AboutMe"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -63,6 +61,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:exported="true"
             android:name=".Schedule"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -72,7 +71,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SplashScreen"
+            android:exported="true"
+            android:name=".presentation.main_activity.MainActivity2"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

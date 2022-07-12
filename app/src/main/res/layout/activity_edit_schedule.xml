@@ -1,63 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBack"
-    tools:context="com.application.mydsu.Schedule">
-<!--    <ImageView-->
-<!--        android:id="@+id/btnMakeChanges"-->
-<!--        android:layout_width="32dp"-->
-<!--        android:layout_height="32dp"-->
-<!--        android:src="@drawable/update"-->
-<!--        android:layout_marginEnd="20dp"-->
-<!--        android:onClick="InHomeWork"-->
-<!--        app:layout_constraintEnd_toStartOf="@id/btnHomeWork"-->
-<!--        app:layout_constraintTop_toTopOf="@id/btnHomeWork"/>-->
-<!--    <ImageView-->
-<!--        android:id="@id/btnHomeWork"-->
-<!--        android:layout_width="32dp"-->
-<!--        android:layout_height="32dp"-->
-<!--        android:src="@drawable/ic_home_work_icon_btn"-->
+    tools:context=".EditSchedule.EditScheduleActivity">
+
+<!--    <Button-->
+<!--        android:id="@+id/outUserTV"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_marginTop="36dp"-->
 <!--        android:layout_marginEnd="36dp"-->
-<!--        android:layout_marginTop="32dp"-->
-<!--        android:onClick="InHomeWork"-->
+<!--        android:background="@drawable/ic_back_out"-->
+<!--        android:fontFamily="@font/gothapromed"-->
+<!--        android:textColor="@color/whiteAndBlack"-->
+<!--        android:textSize="20sp"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"  />-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
 <!--    <TextView-->
 <!--        android:id="@+id/nameSchedule"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        android:layout_marginTop="32dp"-->
 <!--        android:fontFamily="@font/gothapromed"-->
-<!--        android:hint="Имя"-->
+<!--        android:text="Редактирование"-->
 <!--        android:textColor="@color/whiteAndBlack"-->
-<!--        android:textColorHint="@color/colorBlackAndWhite"-->
 <!--        android:textSize="20sp"-->
 <!--        app:layout_constraintStart_toStartOf="@+id/scheduleText"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 <!--    <TextView-->
-<!--        android:id="@+id/surNameSchedule"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="3dp"-->
-<!--        android:fontFamily="@font/gothapromed"-->
-<!--        android:hint="Фамилия"-->
-<!--        android:textColor="@color/whiteAndBlack"-->
-<!--        android:textColorHint="@color/colorBlackAndWhite"-->
-<!--        android:textSize="20sp"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/nameSchedule"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/nameSchedule" />-->
-
-<!--    <TextView-->
 <!--        android:id="@+id/course"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginTop="6dp"-->
 <!--        android:fontFamily="@font/gothapro1ig"-->
 <!--        android:hint="Курс,"-->
 <!--        android:textColor="@color/colorSubGroupSchedule"-->
@@ -83,20 +63,20 @@
 <!--        android:id="@+id/scheduleText"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginTop="22dp"-->
 <!--        android:fontFamily="@font/gothaprobla"-->
 <!--        android:text="Расписание"-->
 <!--        android:textColor="@color/whiteAndBlack"-->
-<!--        android:textSize="44sp"-->
+<!--        android:textSize="30sp"-->
 <!--        app:layout_constraintStart_toStartOf="@+id/buttonWeekOne"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/course" />-->
 
 <!--    <Button-->
 <!--        android:id="@+id/buttonWeekOne"-->
+<!--        style="?android:borderlessButtonStyle"-->
 <!--        android:layout_width="70dp"-->
 <!--        android:layout_height="20dp"-->
 <!--        android:layout_marginTop="18dp"-->
-<!--        style="?android:borderlessButtonStyle"-->
 <!--        android:background="@drawable/form_schedule_lessons"-->
 <!--        android:fontFamily="@font/gothapromed"-->
 <!--        android:onClick="onClickWeek"-->
@@ -109,9 +89,9 @@
 
 <!--    <Button-->
 <!--        android:id="@+id/buttonWeekTwo"-->
+<!--        style="?android:borderlessButtonStyle"-->
 <!--        android:layout_width="70dp"-->
 <!--        android:layout_height="20dp"-->
-<!--        style="?android:borderlessButtonStyle"-->
 <!--        android:layout_marginStart="10dp"-->
 <!--        android:background="@drawable/form_schedule_lessons"-->
 <!--        android:fontFamily="@font/gothapromed"-->
@@ -158,10 +138,10 @@
 
 <!--        <Button-->
 <!--            android:id="@+id/btnWeekDay1"-->
+<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:layout_width="@dimen/formDayBtnWidth"-->
 <!--            android:layout_height="@dimen/formDayBtnHeight"-->
 <!--            android:layout_weight="1"-->
-<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:background="@drawable/form_schedule_btn"-->
 <!--            android:fontFamily="@font/gothaprobol"-->
 <!--            android:gravity="top|center_horizontal"-->
@@ -174,11 +154,11 @@
 
 <!--        <Button-->
 <!--            android:id="@+id/btnWeekDay2"-->
+<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:layout_width="@dimen/formDayBtnWidth"-->
 <!--            android:layout_height="@dimen/formDayBtnHeight"-->
 <!--            android:layout_marginStart="5dp"-->
 <!--            android:layout_weight="1"-->
-<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:background="@drawable/form_schedule_btn"-->
 <!--            android:fontFamily="@font/gothaprobol"-->
 <!--            android:gravity="top|center_horizontal"-->
@@ -191,11 +171,11 @@
 
 <!--        <Button-->
 <!--            android:id="@+id/btnWeekDay3"-->
+<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:layout_width="@dimen/formDayBtnWidth"-->
 <!--            android:layout_height="@dimen/formDayBtnHeight"-->
 <!--            android:layout_marginStart="5dp"-->
 <!--            android:layout_weight="1"-->
-<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:background="@drawable/form_schedule_btn"-->
 <!--            android:fontFamily="@font/gothaprobol"-->
 <!--            android:gravity="top|center_horizontal"-->
@@ -208,6 +188,7 @@
 
 <!--        <Button-->
 <!--            android:id="@+id/btnWeekDay4"-->
+<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:layout_width="@dimen/formDayBtnWidth"-->
 <!--            android:layout_height="@dimen/formDayBtnHeight"-->
 <!--            android:layout_marginStart="5dp"-->
@@ -217,7 +198,6 @@
 <!--            android:gravity="top|center_horizontal"-->
 <!--            android:onClick="onClickDay"-->
 <!--            android:paddingTop="18dp"-->
-<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:paddingBottom="8dp"-->
 <!--            android:textColor="@android:color/white"-->
 <!--            android:textSize="@dimen/btnDaysNumber"-->
@@ -225,6 +205,7 @@
 
 <!--        <Button-->
 <!--            android:id="@+id/btnWeekDay5"-->
+<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:layout_width="@dimen/formDayBtnWidth"-->
 <!--            android:layout_height="@dimen/formDayBtnHeight"-->
 <!--            android:layout_marginStart="5dp"-->
@@ -234,7 +215,6 @@
 <!--            android:gravity="top|center_horizontal"-->
 <!--            android:onClick="onClickDay"-->
 <!--            android:paddingTop="18dp"-->
-<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:paddingBottom="8dp"-->
 <!--            android:textColor="@android:color/white"-->
 <!--            android:textSize="@dimen/btnDaysNumber"-->
@@ -242,6 +222,7 @@
 
 <!--        <Button-->
 <!--            android:id="@+id/btnWeekDay6"-->
+<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:layout_width="@dimen/formDayBtnWidth"-->
 <!--            android:layout_height="@dimen/formDayBtnHeight"-->
 <!--            android:layout_marginStart="5dp"-->
@@ -251,7 +232,6 @@
 <!--            android:gravity="top|center_horizontal"-->
 <!--            android:onClick="onClickDay"-->
 <!--            android:paddingTop="18dp"-->
-<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:paddingBottom="8dp"-->
 <!--            android:textColor="@android:color/white"-->
 <!--            android:textSize="@dimen/btnDaysNumber"-->
@@ -273,6 +253,7 @@
 
 <!--        <Button-->
 <!--            android:id="@+id/btnWeekDay8"-->
+<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:layout_width="@dimen/formDayBtnWidth"-->
 <!--            android:layout_height="@dimen/formDayBtnHeight"-->
 <!--            android:layout_weight="1"-->
@@ -282,7 +263,6 @@
 <!--            android:onClick="onClickDay"-->
 <!--            android:paddingTop="18dp"-->
 <!--            android:paddingBottom="8dp"-->
-<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:text="\nПн"-->
 <!--            android:textColor="@android:color/white"-->
 <!--            android:textSize="@dimen/btnDaysNumber"-->
@@ -290,6 +270,7 @@
 
 <!--        <Button-->
 <!--            android:id="@+id/btnWeekDay9"-->
+<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:layout_width="@dimen/formDayBtnWidth"-->
 <!--            android:layout_height="@dimen/formDayBtnHeight"-->
 <!--            android:layout_marginStart="5dp"-->
@@ -299,7 +280,6 @@
 <!--            android:gravity="top|center_horizontal"-->
 <!--            android:onClick="onClickDay"-->
 <!--            android:paddingTop="18dp"-->
-<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:paddingBottom="8dp"-->
 <!--            android:textColor="@android:color/white"-->
 <!--            android:textSize="@dimen/btnDaysNumber"-->
@@ -307,6 +287,7 @@
 
 <!--        <Button-->
 <!--            android:id="@+id/btnWeekDay10"-->
+<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:layout_width="@dimen/formDayBtnWidth"-->
 <!--            android:layout_height="@dimen/formDayBtnHeight"-->
 <!--            android:layout_marginStart="5dp"-->
@@ -316,7 +297,6 @@
 <!--            android:gravity="top|center_horizontal"-->
 <!--            android:onClick="onClickDay"-->
 <!--            android:paddingTop="18dp"-->
-<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:paddingBottom="8dp"-->
 <!--            android:textColor="@android:color/white"-->
 <!--            android:textSize="@dimen/btnDaysNumber"-->
@@ -324,6 +304,7 @@
 
 <!--        <Button-->
 <!--            android:id="@+id/btnWeekDay11"-->
+<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:layout_width="@dimen/formDayBtnWidth"-->
 <!--            android:layout_height="@dimen/formDayBtnHeight"-->
 <!--            android:layout_marginStart="5dp"-->
@@ -334,18 +315,17 @@
 <!--            android:onClick="onClickDay"-->
 <!--            android:paddingTop="18dp"-->
 <!--            android:paddingBottom="8dp"-->
-<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:textColor="@android:color/white"-->
 <!--            android:textSize="@dimen/btnDaysNumber"-->
 <!--            tools:layout_editor_absoluteX="18dp" />-->
 
 <!--        <Button-->
 <!--            android:id="@+id/btnWeekDay12"-->
+<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:layout_width="@dimen/formDayBtnWidth"-->
 <!--            android:layout_height="@dimen/formDayBtnHeight"-->
 <!--            android:layout_marginStart="5dp"-->
 <!--            android:layout_weight="1"-->
-<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:background="@drawable/form_schedule_btn"-->
 <!--            android:fontFamily="@font/gothaprobol"-->
 <!--            android:gravity="top|center_horizontal"-->
@@ -358,6 +338,7 @@
 
 <!--        <Button-->
 <!--            android:id="@+id/btnWeekDay13"-->
+<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:layout_width="@dimen/formDayBtnWidth"-->
 <!--            android:layout_height="@dimen/formDayBtnHeight"-->
 <!--            android:layout_marginStart="5dp"-->
@@ -367,7 +348,6 @@
 <!--            android:gravity="top|center_horizontal"-->
 <!--            android:onClick="onClickDay"-->
 <!--            android:paddingTop="18dp"-->
-<!--            style="?android:borderlessButtonStyle"-->
 <!--            android:paddingBottom="8dp"-->
 <!--            android:textColor="@android:color/white"-->
 <!--            android:textSize="@dimen/btnDaysNumber"-->
@@ -578,9 +558,9 @@
 <!--                android:background="@drawable/form_lessons_number"-->
 <!--                android:fontFamily="@font/gothaprobol"-->
 <!--                android:gravity="center"-->
-<!--                android:textColor="@color/colorTextNumber"-->
 <!--                android:paddingHorizontal="5dp"-->
 <!--                android:text="1"-->
+<!--                android:textColor="@color/colorTextNumber"-->
 <!--                android:textSize="@dimen/textSizeFormNumber"-->
 <!--                app:layout_constraintBottom_toBottomOf="@+id/form_lessons_btn"-->
 <!--                app:layout_constraintStart_toStartOf="@+id/form_lessons_btn"-->
@@ -594,9 +574,9 @@
 <!--                android:background="@drawable/form_lessons_number"-->
 <!--                android:fontFamily="@font/gothaprobol"-->
 <!--                android:gravity="center"-->
-<!--                android:textColor="@color/colorTextNumber"-->
 <!--                android:paddingHorizontal="5dp"-->
 <!--                android:text="2"-->
+<!--                android:textColor="@color/colorTextNumber"-->
 <!--                android:textSize="@dimen/textSizeFormNumber"-->
 <!--                app:layout_constraintBottom_toBottomOf="@+id/form_lessons_btn2"-->
 <!--                app:layout_constraintStart_toStartOf="@+id/form_lessons_btn2"-->
@@ -611,8 +591,8 @@
 <!--                android:fontFamily="@font/gothaprobol"-->
 <!--                android:gravity="center"-->
 <!--                android:paddingHorizontal="5dp"-->
-<!--                android:textColor="@color/colorTextNumber"-->
 <!--                android:text="3"-->
+<!--                android:textColor="@color/colorTextNumber"-->
 <!--                android:textSize="@dimen/textSizeFormNumber"-->
 <!--                app:layout_constraintBottom_toBottomOf="@+id/form_lessons_btn3"-->
 <!--                app:layout_constraintStart_toStartOf="@+id/form_lessons_btn3"-->
@@ -627,8 +607,8 @@
 <!--                android:fontFamily="@font/gothaprobol"-->
 <!--                android:gravity="center"-->
 <!--                android:paddingHorizontal="5dp"-->
-<!--                android:textColor="@color/colorTextNumber"-->
 <!--                android:text="4"-->
+<!--                android:textColor="@color/colorTextNumber"-->
 <!--                android:textSize="@dimen/textSizeFormNumber"-->
 <!--                app:layout_constraintBottom_toBottomOf="@+id/form_lessons_btn4"-->
 <!--                app:layout_constraintStart_toStartOf="@+id/form_lessons_btn4"-->
@@ -643,8 +623,8 @@
 <!--                android:fontFamily="@font/gothaprobol"-->
 <!--                android:gravity="center"-->
 <!--                android:paddingHorizontal="5dp"-->
-<!--                android:textColor="@color/colorTextNumber"-->
 <!--                android:text="5"-->
+<!--                android:textColor="@color/colorTextNumber"-->
 <!--                android:textSize="@dimen/textSizeFormNumber"-->
 <!--                app:layout_constraintBottom_toBottomOf="@+id/form_lessons_btn5"-->
 <!--                app:layout_constraintStart_toStartOf="@+id/form_lessons_btn5"-->
@@ -659,8 +639,8 @@
 <!--                android:fontFamily="@font/gothaprobol"-->
 <!--                android:gravity="center"-->
 <!--                android:paddingHorizontal="5dp"-->
-<!--                android:textColor="@color/colorTextNumber"-->
 <!--                android:text="6"-->
+<!--                android:textColor="@color/colorTextNumber"-->
 <!--                android:textSize="@dimen/textSizeFormNumber"-->
 <!--                app:layout_constraintBottom_toBottomOf="@+id/form_lessons_btn6"-->
 <!--                app:layout_constraintStart_toStartOf="@+id/form_lessons_btn6"-->
@@ -5647,95 +5627,21 @@
 <!--                </LinearLayout>-->
 
 <!--            </LinearLayout>-->
-
 <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
 <!--    </ScrollView>-->
-
 <!--    <Button-->
-<!--        android:id="@+id/buttonDefault"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="24dp"-->
-<!--        android:background="@drawable/btn_default_schedule"-->
+<!--        android:id="@+id/makeChangesBtn"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginHorizontal="36dp"-->
+<!--        android:layout_marginBottom="32dp"-->
+<!--        android:background="@drawable/form_for_enter_blue"-->
 <!--        android:fontFamily="@font/gothapro1ig"-->
-<!--        android:gravity="center_vertical"-->
-<!--        android:onClick="dialogDefault"-->
-<!--        android:paddingHorizontal="10dp"-->
-<!--        android:text="По умолчанию"-->
+<!--        android:text="Внести изменения"-->
 <!--        android:textAllCaps="false"-->
-<!--        android:textColor="@color/colorBtnDefaultScheduleText"-->
-<!--        android:textSize="10sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/imageEllipse"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/scrollView"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/imageEllipse" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/pencilImage"-->
-<!--        android:layout_width="32dp"-->
-<!--        android:layout_height="32dp"-->
-<!--        android:onClick="editSchedule"-->
-<!--        android:src="@drawable/pencil"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/imageEllipse"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/scrollView"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/imageEllipse" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageEllipse"-->
-<!--        android:layout_width="64dp"-->
-<!--        android:layout_height="64dp"-->
-<!--        android:layout_marginBottom="32dp"-->
-<!--        android:onClick="InBellsOrReady"-->
-<!--        android:src="@drawable/ellipse"-->
+<!--        android:textColor="@color/colorWhite"-->
+<!--        android:textSize="18sp"-->
 <!--        app:layout_constraintBottom_toBottomOf="parent"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintStart_toStartOf="parent" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageEllipse2"-->
-<!--        android:layout_width="64dp"-->
-<!--        android:layout_height="64dp"-->
-<!--        android:layout_marginBottom="32dp"-->
-<!--        android:onClick="InBellsOrReady"-->
-<!--        android:src="@drawable/ellipse"-->
-<!--        android:visibility="invisible"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageBellRealy"-->
-<!--        android:layout_width="30dp"-->
-<!--        android:layout_height="30dp"-->
-<!--        android:layout_marginRight="3dp"-->
-<!--        android:onClick="InBellsOrReady"-->
-<!--        android:src="@drawable/vector"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/imageEllipse"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/imageEllipse"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/imageEllipse"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/imageEllipse" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageBell"-->
-<!--        android:layout_width="30dp"-->
-<!--        android:layout_height="30dp"-->
-<!--        android:onClick="InBellsOrReady"-->
-<!--        android:src="@drawable/bell_to_ready"-->
-<!--        android:visibility="gone"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/imageEllipse"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/imageEllipse"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/imageEllipse"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/imageEllipse" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageReady"-->
-<!--        android:layout_width="30dp"-->
-<!--        android:layout_height="30dp"-->
-<!--        android:layout_marginRight="3dp"-->
-<!--        android:onClick="InBellsOrReady"-->
-<!--        android:src="@drawable/ready_to_bell"-->
-<!--        android:visibility="gone"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/imageEllipse"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/imageEllipse"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/imageEllipse"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/imageEllipse" />-->
-
 </androidx.constraintlayout.widget.ConstraintLayout>

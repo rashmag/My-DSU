@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="@+id/MyDGUText" />
 
     <ScrollView
-        android:id="@+id/scrollViewMainActivity"
+        android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_below="@id/subgroup"
@@ -185,7 +185,6 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/circle_btn"
         android:fontFamily="@font/gothaprobol"
-        android:onClick="showmyinformation"
         android:paddingHorizontal="24dp"
         android:gravity="center_vertical"
         android:text="Новости "
@@ -221,7 +220,6 @@
             android:layout_height="16dp"
             android:layout_marginEnd="24dp"
             android:gravity="center"
-            android:onClick="closeSwipe"
             android:src="@drawable/close_window"
             app:layout_constraintBottom_toBottomOf="@+id/constraintSwipe"
             app:layout_constraintEnd_toEndOf="@+id/constraintSwipe"
@@ -309,15 +307,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/userPhoto"
-        android:layout_alignStart="@+id/MyDGUText"
+        android:layout_alignStart="@+id/myDSUText"
         android:layout_marginTop="43dp"
         android:fontFamily="@font/gothaprobla"
         android:hint="Имя"
-        android:onClick="InAboutMe"
         android:textColor="@color/aboutMeTextNameAndSureName"
         android:textColorHint="@color/colorBlackAndWhite"
         android:textSize="44sp"
-        app:layout_constraintStart_toStartOf="@+id/MyDGUText"
+        app:layout_constraintStart_toStartOf="@+id/myDSUText"
         app:layout_constraintTop_toBottomOf="@+id/userPhoto" />
 
     <TextView
@@ -329,7 +326,6 @@
         android:layout_marginTop="2dp"
         android:fontFamily="@font/gothaprobla"
         android:hint="Фамилия"
-        android:onClick="InAboutMe"
         android:textColor="@color/aboutMeTextNameAndSureName"
         android:textColorHint="@color/colorBlackAndWhite"
         android:textSize="44sp"
@@ -346,7 +342,6 @@
         android:fontFamily="@font/gothapromed"
         android:hint="Направление"
         android:maxLength="17"
-        android:onClick="InAboutMe"
         android:singleLine="true"
         android:textColor="@color/aboutMeTextNameAndSureName"
         android:textColorHint="@color/colorBlackAndWhite"
@@ -363,7 +358,6 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/gothapro1ig"
         android:hint="Группа"
-        android:onClick="InAboutMe"
         android:textAllCaps="false"
         android:textColor="@color/colorSubGroup"
         android:textColorHint="@color/colorBlackAndWhite"

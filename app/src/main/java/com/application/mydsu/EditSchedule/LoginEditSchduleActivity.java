@@ -1,4 +1,4 @@
-package com.application.mydsu.EditSchdule;
+package com.application.mydsu.EditSchedule;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,7 +48,7 @@ public class LoginEditSchduleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_schdule_btn);
+        setContentView(R.layout.activity_edit_schedule_btn);
         init();
         //Добавляем данные в спинер
         setDataInSpinner();
@@ -281,7 +281,7 @@ public class LoginEditSchduleActivity extends AppCompatActivity {
                             Log.d("TAG", "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent intentBack = new Intent(LoginEditSchduleActivity.this,
-                                    EditSchduleActivity.class);
+                                    EditScheduleActivity.class);
                             startActivity(intentBack);
                             finish();
                             overridePendingTransition(R.anim.alpha_zero_one, R.anim.alpha_one_zero);

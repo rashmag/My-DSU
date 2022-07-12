@@ -7,6 +7,11 @@
     <string name="authTitle">Авторизация</string>
     <string name="textPasswordHint">Пароль</string>
     <string name="textEnterBtn">Войти</string>
+    <string name="course">\"курс\"</string>
+    <string name="subgroup">\"подгруппа\"</string>
+    <string name="plugSurName">Фамилия</string>
+    <string name="plugName">Имя</string>
+    <string name="plugOneCource"> курс</string>
     <string-array name="facultetSpinner">
         <item>Магистерской подготовки</item>
         <item>Химический</item>

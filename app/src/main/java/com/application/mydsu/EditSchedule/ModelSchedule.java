@@ -1,6 +1,4 @@
-package com.application.mydsu.EditSchdule;
-
-import android.widget.EditText;
+package com.application.mydsu.EditSchedule;
 
 public class ModelSchedule {
 

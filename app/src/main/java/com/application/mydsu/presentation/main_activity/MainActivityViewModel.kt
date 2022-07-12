@@ -10,17 +10,22 @@ import androidx.lifecycle.ViewModel
 import com.application.mydsu.Tutorial.ActivityStart
 import com.application.mydsu.data.main_activity.MainActivityRepImpl
 import com.application.mydsu.domain.main_activity.usecases.*
+import com.application.mydsu.domain.main_activity.usecases.load.LoadCourceUseCase
+import com.application.mydsu.domain.main_activity.usecases.load.LoadThemeSharedUseCase
+import javax.inject.Inject
 
-class MainActivityViewModel (application: Application): ViewModel(){
-    private val mainActivityRep = MainActivityRepImpl(application)
-    private val getNameUseCase = GetNameUseCase(mainActivityRep)
-    private val getSurNameUseCase = GetSurNameUseCase(mainActivityRep)
-    private val getDirectionUseCase = GetDirectionUseCase(mainActivityRep)
-    private val getSubGroupUseCase = GetSubGroupUseCase(mainActivityRep)
-    private val getFirstRunSwipeUseCase = GetFirstRunSwipeUseCase(mainActivityRep)
-    private val getFirstRunUseCase = GetFirstRunUseCase(mainActivityRep)
-    private val saveFirstRunUseCase = SaveFirstRunUseCase(mainActivityRep)
-    private val saveFirstRunSwipeUseCase = SaveFirstRunSwipeUseCase(mainActivityRep)
+class MainActivityViewModel @Inject constructor(
+    private val getNameUseCase: LoadNameUseCase,
+    private val getSurNameUseCase: LoadSurNameUseCase,
+    private val getDirectionUseCase: LoadDirectionUseCase,
+    private val getSubGroupUseCase: LoadCourceUseCase,
+    private val getFirstRunSwipeUseCase: LoadFirstRunSwipeUseCase,
+    private val getFirstRunUseCase: LoadFirstRunUseCase,
+    private val saveFirstRunUseCase: SaveFirstRunUseCase,
+    private val saveFirstRunSwipeUseCase: SaveFirstRunSwipeUseCase,
+    private val loadThemeSharedUseCase: LoadThemeSharedUseCase
+) : ViewModel() {
+
 
     private val _getNameList = MutableLiveData<String>()
     val getNameList: LiveData<String>
@@ -34,17 +39,9 @@ class MainActivityViewModel (application: Application): ViewModel(){
     val getDirectionList: LiveData<String>
         get() = _getDirectionList
 
-    private val _getSubGroupList = MutableLiveData<String>()
-    val getSubGroupList: LiveData<String>
-        get() = _getSubGroupList
-
-    private val _getFirstRunSwipeList = MutableLiveData<Int>()
-    val getFirstRunSwipeList: LiveData<Int>
-        get() = _getFirstRunSwipeList
-
-    private val _getFirstRunList = MutableLiveData<Boolean>()
-    val getFirstRunList: LiveData<Boolean>
-        get() = _getFirstRunList
+    private val _getCourceList = MutableLiveData<String>()
+    val getCourceList: LiveData<String>
+        get() = _getCourceList
 
     init {
         getUserData()
@@ -54,38 +51,43 @@ class MainActivityViewModel (application: Application): ViewModel(){
         getName()
         getSurName()
         getDirection()
-        getSubGroup()
+        getCource()
         getFirstRunSwipe()
-        getFirstRun()
     }
 
-
-    private fun getFirstRun(){
-        if(getFirstRunUseCase.getFirstRunUseCase()){
-            _getFirstRunList.postValue(getFirstRunUseCase.getFirstRunUseCase())
-            saveFirstRunUseCase.saveFirstRunUseCase()
+    fun getFirstRun(): Boolean {
+        if (getFirstRunUseCase.invoke()) {
+            saveFirstRunUseCase.invoke()
+            return getFirstRunUseCase.invoke()
         }
-        if (getFirstRunSwipeUseCase.getFirstRunSwipeUseCase() != 0) {
-            _getFirstRunSwipeList.postValue(getFirstRunSwipeUseCase.getFirstRunSwipeUseCase())
-        }
-    }
-    fun saveFirstRunSwipe(value:Int){
-        saveFirstRunSwipeUseCase.saveFirstRunSwipeUseCase(value)
-    }
-    fun getFirstRunSwipe():Int{
-        return getFirstRunSwipeUseCase.getFirstRunSwipeUseCase()
+        return false
     }
 
-    private fun getName(){
-        _getNameList.postValue(getNameUseCase.getNameUseCase())
+    fun saveFirstRunSwipe(value: Int) {
+        saveFirstRunSwipeUseCase.invoke(value)
     }
-    private fun getSurName(){
-        _getSurNameList.postValue(getSurNameUseCase.getSurNameUseCase())
+
+    fun getFirstRunSwipe(): Int {
+        return getFirstRunSwipeUseCase.invoke()
     }
-    private fun getDirection(){
-        _getDirectionList.postValue(getDirectionUseCase.getDirectionUseCase())
+
+    private fun getName() {
+        _getNameList.postValue(getNameUseCase.invoke())
     }
-    private fun getSubGroup(){
-        _getSubGroupList.postValue(getSubGroupUseCase.getSubGroupUseCase())
+
+    private fun getSurName() {
+        _getSurNameList.postValue(getSurNameUseCase.invoke())
+    }
+
+    private fun getDirection() {
+        _getDirectionList.postValue(getDirectionUseCase.invoke())
+    }
+
+    private fun getCource() {
+        _getCourceList.postValue(getSubGroupUseCase.invoke())
+    }
+
+    fun getTheme(): Boolean {
+        return loadThemeSharedUseCase.invoke()
     }
 }

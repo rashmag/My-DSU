@@ -1,12 +1,13 @@
 package com.application.mydsu.domain.main_activity.repository
 
 interface MainActivityRep {
-    fun getDirection(): String?
-    fun getSubGroup(): String?
-    fun getName(): String?
-    fun getSurName(): String?
-    fun getFirstRun(): Boolean
-    fun getFirstRunSwipe(): Int
+    fun loadDirection(): String
+    fun loadCource(): String
+    fun loadName(): String
+    fun loadSurName(): String
+    fun loadFirstRun(): Boolean
+    fun loadFirstRunSwipe(): Int
     fun saveFirstRun()
     fun saveFirstRunSwipe(value:Int)
+    fun loadThemeShared():Boolean
 }

@@ -32,8 +32,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.application.mydsu.CustomSpinner.CustomAdapter;
-import com.application.mydsu.EditSchdule.EditSchduleActivity;
-import com.application.mydsu.EditSchdule.LoginEditSchduleActivity;
+import com.application.mydsu.EditSchedule.EditScheduleActivity;
+import com.application.mydsu.EditSchedule.LoginEditSchduleActivity;
 import com.application.mydsu.Utils.CircularTransformation;
 import com.application.mydsu.Utils.Swipe;
 import com.application.mydsu.presentation.main_activity.MainActivity;
@@ -232,7 +232,7 @@ public class AboutMe extends AppCompatActivity implements AdapterView.OnItemSele
                 Intent intentBack;
                 if (user != null) {
                     intentBack = new Intent(AboutMe.this,
-                            EditSchduleActivity.class);
+                            EditScheduleActivity.class);
                 }else{
                     intentBack = new Intent(AboutMe.this,
                             LoginEditSchduleActivity.class);
@@ -410,9 +410,10 @@ public class AboutMe extends AppCompatActivity implements AdapterView.OnItemSele
                 elementSpinnerFacultetInt = selectedItemPosition;
                 if (elementSpinnerFacultet.contentEquals("Магистерской подготовки")) {
                     List<String> listDirection = new ArrayList<String>() {{
-                        add("Пр инф в упр фин");
-                        add("Пр инф в дизайне");
-                        add("Пр инф в юриспр");
+                        add("ИСиТ");
+                        add("ИБ");
+                        add("ПИМ");
+                        add("ПИЭ");
                     }};
                     adapterDirection = new CustomAdapter(AboutMe.this, R.layout.item_spinner_title, R.layout.item_spinner_dropdown, listDirection);
                     spinnerDirection.setAdapter(adapterDirection);
@@ -492,9 +493,8 @@ public class AboutMe extends AppCompatActivity implements AdapterView.OnItemSele
 
         //SPINNER SUBGROUPCOURCE - НАЧАЛО
         final List<String> listSubgroupCource = new ArrayList<String>() {{
-            add("И141");
-            add("Т142");
-            add("П141");
+            add("1");
+            add("2");
         }};
         adapterSubgroupCource = new CustomAdapter(this, R.layout.item_spinner_title, R.layout.item_spinner_dropdown, listSubgroupCource);
         spinnerSubgroupCource.setAdapter(adapterSubgroupCource);
