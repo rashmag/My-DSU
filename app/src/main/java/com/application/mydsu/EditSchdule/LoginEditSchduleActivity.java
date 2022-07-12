@@ -126,37 +126,45 @@ public class LoginEditSchduleActivity extends AppCompatActivity {
             }
         });
 
+        final List<String> listDirection = new ArrayList<String>() {{
+            add("Пр инф в упр фин");
+            add("Пр инф в дизайне");
+            add("Пр инф в юриспр");
+        }};
+        CustomAdapter adapterFacultet = new CustomAdapter(this, R.layout.item_spinner_title_tutorial, R.layout.item_spinner_dropdown_tutorial, listDirection);
+        spinnerDirection.setAdapter(adapterFacultet);
+
         spinnerCource.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent,
                                        View itemSelected, int selectedItemPosition, long selectedId) {
                 elementSpinnerCource = spinnerCource.getSelectedItem().toString();
                 elementSpinnerCourceInt = selectedItemPosition;
 
-                if (elementSpinnerCource.contentEquals("1")) {
-                    List<String> listDirection = new ArrayList<String>() {{
-                        add("ИСиТ");
-                        add("ИБ");
-                        add("ИСиП");
-                        add("ПИЭ");
-                    }};
-
-                    adapterDirection = new CustomAdapter(LoginEditSchduleActivity
-                            .this, R.layout.item_spinner_title,
-                            R.layout.item_spinner_dropdown, listDirection);
-                    spinnerDirection.setAdapter(adapterDirection);
-                    spinnerDirection.setSelection(elementSpinnerDirectionInt);
-                } else {
-                    List<String> listDirection = new ArrayList<String>() {{
-                        add("ИСиТ");
-                        add("ИБ");
-                        add("ПИМ");
-                        add("ПИЭ");
-                    }};
-                    adapterDirection = new CustomAdapter
-                            (LoginEditSchduleActivity.this, R.layout.item_spinner_title, R.layout.item_spinner_dropdown, listDirection);
-                    spinnerDirection.setAdapter(adapterDirection);
-                    spinnerDirection.setSelection(elementSpinnerDirectionInt);
-                }
+//                if (elementSpinnerCource.contentEquals("1")) {
+//                    List<String> listDirection = new ArrayList<String>() {{
+//                        add("ИСиТ");
+//                        add("ИБ");
+//                        add("ИСиП");
+//                        add("ПИЭ");
+//                    }};
+//
+//                    adapterDirection = new CustomAdapter(LoginEditSchduleActivity
+//                            .this, R.layout.item_spinner_title,
+//                            R.layout.item_spinner_dropdown, listDirection);
+//                    spinnerDirection.setAdapter(adapterDirection);
+//                    spinnerDirection.setSelection(elementSpinnerDirectionInt);
+//                } else {
+//                    List<String> listDirection = new ArrayList<String>() {{
+//                        add("ИСиТ");
+//                        add("ИБ");
+//                        add("ПИМ");
+//                        add("ПИЭ");
+//                    }};
+//                    adapterDirection = new CustomAdapter
+//                            (LoginEditSchduleActivity.this, R.layout.item_spinner_title, R.layout.item_spinner_dropdown, listDirection);
+//                    spinnerDirection.setAdapter(adapterDirection);
+//                    spinnerDirection.setSelection(elementSpinnerDirectionInt);
+//                }
             }
 
 
@@ -184,8 +192,9 @@ public class LoginEditSchduleActivity extends AppCompatActivity {
         //Спинер подгрупп
         final List<String> listSubGroup = new ArrayList<String>() {
             {
-                add("1");
-                add("2");
+                add("И141");
+                add("Т142");
+                add("П141");
             }
         };
         adapterSubGroup = new CustomAdapter(this, R.layout.item_spinner_title, R.layout.item_spinner_dropdown, listSubGroup);
@@ -250,16 +259,12 @@ public class LoginEditSchduleActivity extends AppCompatActivity {
         editor.apply();
     }
     private void textDirectionInEnglish() {
-        if (textSpinDirection.equals("ИСиТ")) {
+        if (textSpinDirection.equals("Пр инф в упр фин")) {
             dirText = "isit";
-        } else if (textSpinDirection.equals("ИБ")) {
+        } else if (textSpinDirection.equals("Пр инф в дизайне")) {
             dirText = "ib";
-        } else if (textSpinDirection.equals("ИСиП")) {
+        } else if (textSpinDirection.equals("Пр инф в юриспр")) {
             dirText = "isip";
-        } else if (textSpinDirection.equals("ПИМ")) {
-            dirText = "pim";
-        } else if (textSpinDirection.equals("ПИЭ")) {
-            dirText = "pie";
         } else {
             dirText = "isit";
         }

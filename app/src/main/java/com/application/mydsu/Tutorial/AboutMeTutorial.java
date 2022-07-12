@@ -4,15 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,9 +18,8 @@ import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.application.mydsu.AboutMe;
 import com.application.mydsu.CustomSpinner.CustomAdapter;
-import com.application.mydsu.MainActivity;
+import com.application.mydsu.presentation.main_activity.MainActivity;
 import com.application.mydsu.R;
 
 import java.util.ArrayList;
@@ -131,7 +126,7 @@ public class AboutMeTutorial extends AppCompatActivity {
         //SPINNER FACULTET
         spinnerFacultet = findViewById(R.id.spinnerFacultet);
         final List<String> listFacultet = new ArrayList<String>() {{
-            add("Информатики и Информационных Технологий");
+            add("Магистерской подготовки");
         }};
         CustomAdapter adapterFacultet = new CustomAdapter(this, R.layout.item_spinner_title_tutorial, R.layout.item_spinner_dropdown_tutorial, listFacultet);
         spinnerFacultet.setAdapter(adapterFacultet);
@@ -140,19 +135,17 @@ public class AboutMeTutorial extends AppCompatActivity {
                                        View itemSelected, int selectedItemPosition, long selectedId) {
                 elementSpinnerFacultet = spinnerFacultet.getSelectedItem().toString();
                 elementSpinnerFacultetInt = selectedItemPosition;
-                if (elementSpinnerFacultet.contentEquals("Информатики и Информационных Технологий")) {
+                if (elementSpinnerFacultet.contentEquals("Магистерской подготовки")) {
                     List<String> listDirection = new ArrayList<String>() {{
-                        add("ИСиТ");
-                        add("ПИЭ");
-                        add("ИБ");
-                        add("ПИМ");
+                        add("Пр инф в упр фин");
+                        add("Пр инф в дизайне");
+                        add("Пр инф в юриспр");
                     }};
                     adapterDirection = new CustomAdapter(AboutMeTutorial.this, R.layout.item_spinner_title_tutorial, R.layout.item_spinner_dropdown_tutorial, listDirection);
                     spinnerDirection.setAdapter(adapterDirection);
                 }
             }
 
-            ;
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -190,27 +183,27 @@ public class AboutMeTutorial extends AppCompatActivity {
                                        View itemSelected, int selectedItemPosition, long selectedId) {
                 elementSpinnerCource = spinnerCource.getSelectedItem().toString();
                 elementSpinnerCourceInt = selectedItemPosition;
-                if(elementSpinnerCource.contentEquals("1") && elementSpinnerFacultet.contentEquals("Информатики и Информационных Технологий")){
-                    List<String> listDirection = new ArrayList<String>() {{
-                        add("ИСиТ");
-                        add("ИБ");
-                        add("ИСиП");
-                        add("ПИЭ");
-                    }};
-                    adapterDirection = new CustomAdapter(AboutMeTutorial.this, R.layout.item_spinner_title_tutorial, R.layout.item_spinner_dropdown_tutorial, listDirection);
-                    spinnerDirection.setAdapter(adapterDirection);
-                    spinnerDirection.setSelection(elementSpinnerDirectionInt);
-                }else if(elementSpinnerFacultet.contentEquals("Информатики и Информационных Технологий")){
-                    List<String> listDirection = new ArrayList<String>() {{
-                        add("ИСиТ");
-                        add("ИБ");
-                        add("ПИМ");
-                        add("ПИЭ");
-                    }};
-                    adapterDirection = new CustomAdapter(AboutMeTutorial.this, R.layout.item_spinner_title_tutorial, R.layout.item_spinner_dropdown_tutorial, listDirection);
-                    spinnerDirection.setAdapter(adapterDirection);
-                    spinnerDirection.setSelection(elementSpinnerDirectionInt);
-                }
+//                if(elementSpinnerCource.contentEquals("1") && elementSpinnerFacultet.contentEquals("Информатики и Информационных Технологий")){
+//                    List<String> listDirection = new ArrayList<String>() {{
+//                        add("ИСиТ");
+//                        add("ИБ");
+//                        add("ИСиП");
+//                        add("ПИЭ");
+//                    }};
+//                    adapterDirection = new CustomAdapter(AboutMeTutorial.this, R.layout.item_spinner_title_tutorial, R.layout.item_spinner_dropdown_tutorial, listDirection);
+//                    spinnerDirection.setAdapter(adapterDirection);
+//                    spinnerDirection.setSelection(elementSpinnerDirectionInt);
+//                }else if(elementSpinnerFacultet.contentEquals("Информатики и Информационных Технологий")){
+//                    List<String> listDirection = new ArrayList<String>() {{
+//                        add("ИСиТ");
+//                        add("ИБ");
+//                        add("ПИМ");
+//                        add("ПИЭ");
+//                    }};
+//                    adapterDirection = new CustomAdapter(AboutMeTutorial.this, R.layout.item_spinner_title_tutorial, R.layout.item_spinner_dropdown_tutorial, listDirection);
+//                    spinnerDirection.setAdapter(adapterDirection);
+//                    spinnerDirection.setSelection(elementSpinnerDirectionInt);
+//                }
                 if(!test){
                     Integer elementSpinnerDirectionInt2 = sharedPreferences.getInt("elementSpinnerDirectionInt", 0);
                     spinnerDirection.setSelection(elementSpinnerDirectionInt2);
@@ -229,8 +222,9 @@ public class AboutMeTutorial extends AppCompatActivity {
         //SPINNER SUBGROUPCOURCE - НАЧАЛО
         spinnerSubgroupCource = findViewById(R.id.subgroupCource);
         final List<String> listSubgroupCource = new ArrayList<String>() {{
-            add("1");
-            add("2");
+            add("И141");
+            add("Т142");
+            add("П141");
         }};
         CustomAdapter adapterSubgroupCource = new CustomAdapter(this, R.layout.item_spinner_title_tutorial, R.layout.item_spinner_dropdown_tutorial, listSubgroupCource);
         spinnerSubgroupCource.setAdapter(adapterSubgroupCource);

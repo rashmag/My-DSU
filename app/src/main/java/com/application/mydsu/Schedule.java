@@ -38,9 +38,9 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
 
-import com.application.mydsu.EditSchdule.EditSchduleActivity;
 import com.application.mydsu.HomeWork.HomeWork;
 import com.application.mydsu.Utils.Swipe;
+import com.application.mydsu.presentation.main_activity.MainActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

@@ -36,6 +36,7 @@ import com.application.mydsu.EditSchdule.EditSchduleActivity;
 import com.application.mydsu.EditSchdule.LoginEditSchduleActivity;
 import com.application.mydsu.Utils.CircularTransformation;
 import com.application.mydsu.Utils.Swipe;
+import com.application.mydsu.presentation.main_activity.MainActivity;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
@@ -43,7 +44,6 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.play.core.review.ReviewInfo;
 import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
@@ -52,8 +52,6 @@ import com.google.android.play.core.tasks.OnSuccessListener;
 import com.google.android.play.core.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
@@ -401,7 +399,7 @@ public class AboutMe extends AppCompatActivity implements AdapterView.OnItemSele
     public void SpinnerItem() {
         //SPINNER FACULTET
         final List<String> listFacultet = new ArrayList<String>() {{
-            add("Информатики и Информационных Технологий");
+            add("Магистерской подготовки");
         }};
         adapterFacultet = new CustomAdapter(this, R.layout.item_spinner_title, R.layout.item_spinner_dropdown, listFacultet);
         spinnerFacultet.setAdapter(adapterFacultet);
@@ -410,11 +408,11 @@ public class AboutMe extends AppCompatActivity implements AdapterView.OnItemSele
                                        View itemSelected, int selectedItemPosition, long selectedId) {
                 elementSpinnerFacultet = spinnerFacultet.getSelectedItem().toString();
                 elementSpinnerFacultetInt = selectedItemPosition;
-                if (elementSpinnerFacultet.contentEquals("Информатики и Информационных Технологий")) {
+                if (elementSpinnerFacultet.contentEquals("Магистерской подготовки")) {
                     List<String> listDirection = new ArrayList<String>() {{
-                        add("Пр.инф. в упр.фин.");
-                        add("Пр.инф. в дизайне");
-                        add("Пр.инф. в юриспр.");
+                        add("Пр инф в упр фин");
+                        add("Пр инф в дизайне");
+                        add("Пр инф в юриспр");
                     }};
                     adapterDirection = new CustomAdapter(AboutMe.this, R.layout.item_spinner_title, R.layout.item_spinner_dropdown, listDirection);
                     spinnerDirection.setAdapter(adapterDirection);

@@ -24,8 +24,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
-import com.application.mydsu.InformationAboutTheApp;
-import com.application.mydsu.MainActivity;
+import com.application.mydsu.presentation.main_activity.MainActivity;
 import com.application.mydsu.R;
 import com.application.mydsu.Schedule;
 import com.application.mydsu.Utils.Swipe;

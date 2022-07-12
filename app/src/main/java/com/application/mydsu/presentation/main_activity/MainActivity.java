@@ -1,4 +1,4 @@
-package com.application.mydsu;
+package com.application.mydsu.presentation.main_activity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -16,7 +16,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.application.mydsu.AboutMe;
 import com.application.mydsu.HomeWork.HomeWork;
+import com.application.mydsu.InformationAboutTheApp;
+import com.application.mydsu.R;
+import com.application.mydsu.Schedule;
 import com.application.mydsu.Tutorial.ActivityStart;
 import com.application.mydsu.Utils.CircularTransformation;
 import com.application.mydsu.Utils.Swipe;

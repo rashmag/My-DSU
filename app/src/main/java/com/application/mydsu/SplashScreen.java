@@ -5,17 +5,10 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.application.mydsu.Tutorial.ActivityStart;
+import com.application.mydsu.presentation.main_activity.MainActivity;
 
 import static java.lang.Thread.sleep;
 
@@ -49,7 +42,7 @@ public class SplashScreen extends AppCompatActivity {
         thread.start();
     }
     private void firstrun() {
-            startActivity(new Intent(SplashScreen.this,MainActivity.class));
+            startActivity(new Intent(SplashScreen.this, MainActivity.class));
     }
     @Override
     protected void onPause() {

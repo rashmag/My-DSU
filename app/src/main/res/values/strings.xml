@@ -8,7 +8,7 @@
     <string name="textPasswordHint">Пароль</string>
     <string name="textEnterBtn">Войти</string>
     <string-array name="facultetSpinner">
-        <item>Информатики и Информационных Технологий</item>
+        <item>Магистерской подготовки</item>
         <item>Химический</item>
         <item>Физический</item>
         <item>Экономический</item>
